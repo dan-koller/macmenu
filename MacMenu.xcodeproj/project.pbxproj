@@ -18,9 +18,7 @@
 		654B2B422AAB03B00084CFBA /* WindowActionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B352AAB03AF0084CFBA /* WindowActionCategory.swift */; };
 		654B2B432AAB03B00084CFBA /* AccessibilityElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B362AAB03AF0084CFBA /* AccessibilityElement.swift */; };
 		654B2B442AAB03B00084CFBA /* WindowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B372AAB03AF0084CFBA /* WindowAction.swift */; };
-		654B2B452AAB03B00084CFBA /* EventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B382AAB03AF0084CFBA /* EventTap.swift */; };
-		654B2B462AAB03B00084CFBA /* ApplicationToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B392AAB03AF0084CFBA /* ApplicationToggle.swift */; };
-		654B2B472AAB03B00084CFBA /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B3B2AAB03B00084CFBA /* Defaults.swift */; };
+		654B2B472AAB03B00084CFBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B3B2AAB03B00084CFBA /* Constants.swift */; };
 		654B2B482AAB03B00084CFBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */; };
 		654B2B492AAB03B00084CFBA /* WindowHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B3D2AAB03B00084CFBA /* WindowHistory.swift */; };
 		654B2B4F2AAB04920084CFBA /* MultiWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B4D2AAB04920084CFBA /* MultiWindowManager.swift */; };
@@ -47,70 +45,33 @@
 		654B2BC72AAB04AA0084CFBA /* CUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B6B2AAB04A90084CFBA /* CUtil.swift */; };
 		654B2BC82AAB04AA0084CFBA /* NextPrevDisplayCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B6D2AAB04A90084CFBA /* NextPrevDisplayCalculation.swift */; };
 		654B2BC92AAB04AA0084CFBA /* BottomHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B6E2AAB04A90084CFBA /* BottomHalfCalculation.swift */; };
-		654B2BCA2AAB04AA0084CFBA /* BottomLeftEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B6F2AAB04A90084CFBA /* BottomLeftEighthCalculation.swift */; };
-		654B2BCB2AAB04AA0084CFBA /* BottomLeftThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B702AAB04A90084CFBA /* BottomLeftThirdCalculation.swift */; };
 		654B2BCC2AAB04AA0084CFBA /* UpperRightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B712AAB04A90084CFBA /* UpperRightCalculation.swift */; };
 		654B2BCD2AAB04AA0084CFBA /* MaximizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */; };
-		654B2BCE2AAB04AA0084CFBA /* MiddleLeftNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B732AAB04A90084CFBA /* MiddleLeftNinthCalculation.swift */; };
 		654B2BCF2AAB04AA0084CFBA /* WindowCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B742AAB04A90084CFBA /* WindowCalculation.swift */; };
 		654B2BD02AAB04AA0084CFBA /* MoveLeftRightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */; };
 		654B2BD12AAB04AA0084CFBA /* SpecifiedCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */; };
-		654B2BD22AAB04AA0084CFBA /* FirstThreeFourthsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B772AAB04A90084CFBA /* FirstThreeFourthsCalculation.swift */; };
-		654B2BD32AAB04AA0084CFBA /* EighthsRepeated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B782AAB04A90084CFBA /* EighthsRepeated.swift */; };
-		654B2BD42AAB04AA0084CFBA /* TopLeftEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B792AAB04A90084CFBA /* TopLeftEighthCalculation.swift */; };
 		654B2BD52AAB04AA0084CFBA /* RepeatedExecutionsInThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */; };
 		654B2BD62AAB04AA0084CFBA /* ChangeSizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */; };
-		654B2BD72AAB04AA0084CFBA /* ThirdFourthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7C2AAB04A90084CFBA /* ThirdFourthCalculation.swift */; };
-		654B2BD82AAB04AA0084CFBA /* SecondFourthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7D2AAB04A90084CFBA /* SecondFourthCalculation.swift */; };
 		654B2BD92AAB04AA0084CFBA /* CenterCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */; };
 		654B2BDA2AAB04AA0084CFBA /* TopHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */; };
 		654B2BDB2AAB04AA0084CFBA /* GapCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B802AAB04A90084CFBA /* GapCalculation.swift */; };
 		654B2BDC2AAB04AA0084CFBA /* CenterHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */; };
-		654B2BDD2AAB04AA0084CFBA /* BottomLeftSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B822AAB04A90084CFBA /* BottomLeftSixthCalculation.swift */; };
 		654B2BDE2AAB04AA0084CFBA /* MaximizeHeightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */; };
 		654B2BDF2AAB04AA0084CFBA /* AlmostMaximizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */; };
 		654B2BE02AAB04AA0084CFBA /* LastThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */; };
-		654B2BE12AAB04AA0084CFBA /* BottomCenterRightEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B862AAB04A90084CFBA /* BottomCenterRightEighthCalculation.swift */; };
 		654B2BE22AAB04AA0084CFBA /* LowerLeftCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */; };
-		654B2BE32AAB04AA0084CFBA /* MiddleRightNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B882AAB04A90084CFBA /* MiddleRightNinthCalculation.swift */; };
-		654B2BE42AAB04AA0084CFBA /* SixthsRepeated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B892AAB04A90084CFBA /* SixthsRepeated.swift */; };
-		654B2BE52AAB04AA0084CFBA /* NinthsRepeated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8A2AAB04A90084CFBA /* NinthsRepeated.swift */; };
-		654B2BE62AAB04AA0084CFBA /* BottomLeftNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8B2AAB04A90084CFBA /* BottomLeftNinthCalculation.swift */; };
-		654B2BE72AAB04AA0084CFBA /* RightTodoCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8C2AAB04A90084CFBA /* RightTodoCalculation.swift */; };
 		654B2BE82AAB04AA0084CFBA /* UpperLeftCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */; };
-		654B2BE92AAB04AA0084CFBA /* TopCenterRightEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8E2AAB04A90084CFBA /* TopCenterRightEighthCalculation.swift */; };
-		654B2BEA2AAB04AA0084CFBA /* LastThreeFourthsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8F2AAB04A90084CFBA /* LastThreeFourthsCalculation.swift */; };
-		654B2BEB2AAB04AA0084CFBA /* BottomRightNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B902AAB04A90084CFBA /* BottomRightNinthCalculation.swift */; };
 		654B2BEC2AAB04AA0084CFBA /* LeftRightHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */; };
-		654B2BED2AAB04AA0084CFBA /* TopLeftNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B922AAB04A90084CFBA /* TopLeftNinthCalculation.swift */; };
 		654B2BEE2AAB04AA0084CFBA /* LowerRightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */; };
-		654B2BEF2AAB04AA0084CFBA /* TopRightSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B942AAB04A90084CFBA /* TopRightSixthCalculation.swift */; };
-		654B2BF02AAB04AA0084CFBA /* MiddleCenterNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B952AAB04A90084CFBA /* MiddleCenterNinthCalculation.swift */; };
-		654B2BF12AAB04AA0084CFBA /* TopLeftSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B962AAB04A90084CFBA /* TopLeftSixthCalculation.swift */; };
-		654B2BF22AAB04AA0084CFBA /* BottomRightEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B972AAB04A90084CFBA /* BottomRightEighthCalculation.swift */; };
-		654B2BF32AAB04AA0084CFBA /* BottomRightSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B982AAB04A90084CFBA /* BottomRightSixthCalculation.swift */; };
-		654B2BF42AAB04AA0084CFBA /* TopRightNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B992AAB04A90084CFBA /* TopRightNinthCalculation.swift */; };
-		654B2BF52AAB04AA0084CFBA /* TopCenterLeftEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9A2AAB04A90084CFBA /* TopCenterLeftEighthCalculation.swift */; };
-		654B2BF62AAB04AA0084CFBA /* TopRightEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9B2AAB04A90084CFBA /* TopRightEighthCalculation.swift */; };
-		654B2BF72AAB04AA0084CFBA /* LastFourthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9C2AAB04A90084CFBA /* LastFourthCalculation.swift */; };
 		654B2BF82AAB04AA0084CFBA /* BottomCenterSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */; };
 		654B2BF92AAB04AA0084CFBA /* FirstTwoThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */; };
-		654B2BFA2AAB04AA0084CFBA /* LeftTodoCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9F2AAB04A90084CFBA /* LeftTodoCalculation.swift */; };
-		654B2BFB2AAB04AA0084CFBA /* TopRightThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA02AAB04A90084CFBA /* TopRightThirdCalculation.swift */; };
 		654B2BFC2AAB04AA0084CFBA /* TopCenterSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */; };
-		654B2BFD2AAB04AA0084CFBA /* BottomCenterLeftEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA22AAB04A90084CFBA /* BottomCenterLeftEighthCalculation.swift */; };
 		654B2BFE2AAB04AA0084CFBA /* FirstThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */; };
 		654B2BFF2AAB04AA0084CFBA /* CenterThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA42AAB04A90084CFBA /* CenterThirdCalculation.swift */; };
 		654B2C002AAB04AA0084CFBA /* OrientationAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA52AAB04A90084CFBA /* OrientationAware.swift */; };
 		654B2C012AAB04AA0084CFBA /* LastTwoThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA62AAB04A90084CFBA /* LastTwoThirdsCalculation.swift */; };
 		654B2C022AAB04AA0084CFBA /* MoveUpDownCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA72AAB04A90084CFBA /* MoveUpDownCalculation.swift */; };
-		654B2C032AAB04AA0084CFBA /* BottomCenterNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA82AAB04A90084CFBA /* BottomCenterNinthCalculation.swift */; };
 		654B2C042AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA92AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift */; };
-		654B2C052AAB04AA0084CFBA /* TopCenterNinthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BAA2AAB04AA0084CFBA /* TopCenterNinthCalculation.swift */; };
-		654B2C062AAB04AA0084CFBA /* HorizontalThirdsRepeated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BAB2AAB04AA0084CFBA /* HorizontalThirdsRepeated.swift */; };
-		654B2C072AAB04AA0084CFBA /* TopLeftThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BAC2AAB04AA0084CFBA /* TopLeftThirdCalculation.swift */; };
-		654B2C082AAB04AA0084CFBA /* FirstFourthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BAD2AAB04AA0084CFBA /* FirstFourthCalculation.swift */; };
-		654B2C092AAB04AA0084CFBA /* BottomRightThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BAE2AAB04AA0084CFBA /* BottomRightThirdCalculation.swift */; };
 		654B2C0A2AAB04AA0084CFBA /* SnapAreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB02AAB04AA0084CFBA /* SnapAreaModel.swift */; };
 		654B2C0B2AAB04AA0084CFBA /* FootprintWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB12AAB04AA0084CFBA /* FootprintWindow.swift */; };
 		654B2C0C2AAB04AA0084CFBA /* ThirdsCompoundCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB32AAB04AA0084CFBA /* ThirdsCompoundCalculation.swift */; };
@@ -154,9 +115,7 @@
 		654B2B352AAB03AF0084CFBA /* WindowActionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowActionCategory.swift; sourceTree = "<group>"; };
 		654B2B362AAB03AF0084CFBA /* AccessibilityElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityElement.swift; sourceTree = "<group>"; };
 		654B2B372AAB03AF0084CFBA /* WindowAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowAction.swift; sourceTree = "<group>"; };
-		654B2B382AAB03AF0084CFBA /* EventTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTap.swift; sourceTree = "<group>"; };
-		654B2B392AAB03AF0084CFBA /* ApplicationToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationToggle.swift; sourceTree = "<group>"; };
-		654B2B3B2AAB03B00084CFBA /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		654B2B3B2AAB03B00084CFBA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		654B2B3D2AAB03B00084CFBA /* WindowHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowHistory.swift; sourceTree = "<group>"; };
 		654B2B4A2AAB03D20084CFBA /* MacMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacMenu-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -184,70 +143,33 @@
 		654B2B6B2AAB04A90084CFBA /* CUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUtil.swift; sourceTree = "<group>"; };
 		654B2B6D2AAB04A90084CFBA /* NextPrevDisplayCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevDisplayCalculation.swift; sourceTree = "<group>"; };
 		654B2B6E2AAB04A90084CFBA /* BottomHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomHalfCalculation.swift; sourceTree = "<group>"; };
-		654B2B6F2AAB04A90084CFBA /* BottomLeftEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLeftEighthCalculation.swift; sourceTree = "<group>"; };
-		654B2B702AAB04A90084CFBA /* BottomLeftThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLeftThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2B712AAB04A90084CFBA /* UpperRightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpperRightCalculation.swift; sourceTree = "<group>"; };
 		654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaximizeCalculation.swift; sourceTree = "<group>"; };
-		654B2B732AAB04A90084CFBA /* MiddleLeftNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleLeftNinthCalculation.swift; sourceTree = "<group>"; };
 		654B2B742AAB04A90084CFBA /* WindowCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowCalculation.swift; sourceTree = "<group>"; };
 		654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveLeftRightCalculation.swift; sourceTree = "<group>"; };
 		654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecifiedCalculation.swift; sourceTree = "<group>"; };
-		654B2B772AAB04A90084CFBA /* FirstThreeFourthsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstThreeFourthsCalculation.swift; sourceTree = "<group>"; };
-		654B2B782AAB04A90084CFBA /* EighthsRepeated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EighthsRepeated.swift; sourceTree = "<group>"; };
-		654B2B792AAB04A90084CFBA /* TopLeftEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLeftEighthCalculation.swift; sourceTree = "<group>"; };
 		654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatedExecutionsInThirdsCalculation.swift; sourceTree = "<group>"; };
 		654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSizeCalculation.swift; sourceTree = "<group>"; };
-		654B2B7C2AAB04A90084CFBA /* ThirdFourthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdFourthCalculation.swift; sourceTree = "<group>"; };
-		654B2B7D2AAB04A90084CFBA /* SecondFourthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFourthCalculation.swift; sourceTree = "<group>"; };
 		654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCalculation.swift; sourceTree = "<group>"; };
 		654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopHalfCalculation.swift; sourceTree = "<group>"; };
 		654B2B802AAB04A90084CFBA /* GapCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GapCalculation.swift; sourceTree = "<group>"; };
 		654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterHalfCalculation.swift; sourceTree = "<group>"; };
-		654B2B822AAB04A90084CFBA /* BottomLeftSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLeftSixthCalculation.swift; sourceTree = "<group>"; };
 		654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaximizeHeightCalculation.swift; sourceTree = "<group>"; };
 		654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlmostMaximizeCalculation.swift; sourceTree = "<group>"; };
 		654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastThirdCalculation.swift; sourceTree = "<group>"; };
-		654B2B862AAB04A90084CFBA /* BottomCenterRightEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCenterRightEighthCalculation.swift; sourceTree = "<group>"; };
 		654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowerLeftCalculation.swift; sourceTree = "<group>"; };
-		654B2B882AAB04A90084CFBA /* MiddleRightNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleRightNinthCalculation.swift; sourceTree = "<group>"; };
-		654B2B892AAB04A90084CFBA /* SixthsRepeated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthsRepeated.swift; sourceTree = "<group>"; };
-		654B2B8A2AAB04A90084CFBA /* NinthsRepeated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthsRepeated.swift; sourceTree = "<group>"; };
-		654B2B8B2AAB04A90084CFBA /* BottomLeftNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLeftNinthCalculation.swift; sourceTree = "<group>"; };
-		654B2B8C2AAB04A90084CFBA /* RightTodoCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTodoCalculation.swift; sourceTree = "<group>"; };
 		654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpperLeftCalculation.swift; sourceTree = "<group>"; };
-		654B2B8E2AAB04A90084CFBA /* TopCenterRightEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCenterRightEighthCalculation.swift; sourceTree = "<group>"; };
-		654B2B8F2AAB04A90084CFBA /* LastThreeFourthsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastThreeFourthsCalculation.swift; sourceTree = "<group>"; };
-		654B2B902AAB04A90084CFBA /* BottomRightNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRightNinthCalculation.swift; sourceTree = "<group>"; };
 		654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftRightHalfCalculation.swift; sourceTree = "<group>"; };
-		654B2B922AAB04A90084CFBA /* TopLeftNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLeftNinthCalculation.swift; sourceTree = "<group>"; };
 		654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowerRightCalculation.swift; sourceTree = "<group>"; };
-		654B2B942AAB04A90084CFBA /* TopRightSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightSixthCalculation.swift; sourceTree = "<group>"; };
-		654B2B952AAB04A90084CFBA /* MiddleCenterNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleCenterNinthCalculation.swift; sourceTree = "<group>"; };
-		654B2B962AAB04A90084CFBA /* TopLeftSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLeftSixthCalculation.swift; sourceTree = "<group>"; };
-		654B2B972AAB04A90084CFBA /* BottomRightEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRightEighthCalculation.swift; sourceTree = "<group>"; };
-		654B2B982AAB04A90084CFBA /* BottomRightSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRightSixthCalculation.swift; sourceTree = "<group>"; };
-		654B2B992AAB04A90084CFBA /* TopRightNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightNinthCalculation.swift; sourceTree = "<group>"; };
-		654B2B9A2AAB04A90084CFBA /* TopCenterLeftEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCenterLeftEighthCalculation.swift; sourceTree = "<group>"; };
-		654B2B9B2AAB04A90084CFBA /* TopRightEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightEighthCalculation.swift; sourceTree = "<group>"; };
-		654B2B9C2AAB04A90084CFBA /* LastFourthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFourthCalculation.swift; sourceTree = "<group>"; };
 		654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCenterSixthCalculation.swift; sourceTree = "<group>"; };
 		654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTwoThirdsCalculation.swift; sourceTree = "<group>"; };
-		654B2B9F2AAB04A90084CFBA /* LeftTodoCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTodoCalculation.swift; sourceTree = "<group>"; };
-		654B2BA02AAB04A90084CFBA /* TopRightThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCenterSixthCalculation.swift; sourceTree = "<group>"; };
-		654B2BA22AAB04A90084CFBA /* BottomCenterLeftEighthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCenterLeftEighthCalculation.swift; sourceTree = "<group>"; };
 		654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BA42AAB04A90084CFBA /* CenterThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BA52AAB04A90084CFBA /* OrientationAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationAware.swift; sourceTree = "<group>"; };
 		654B2BA62AAB04A90084CFBA /* LastTwoThirdsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastTwoThirdsCalculation.swift; sourceTree = "<group>"; };
 		654B2BA72AAB04A90084CFBA /* MoveUpDownCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveUpDownCalculation.swift; sourceTree = "<group>"; };
-		654B2BA82AAB04A90084CFBA /* BottomCenterNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCenterNinthCalculation.swift; sourceTree = "<group>"; };
 		654B2BA92AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatedExecutionsCalculation.swift; sourceTree = "<group>"; };
-		654B2BAA2AAB04AA0084CFBA /* TopCenterNinthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCenterNinthCalculation.swift; sourceTree = "<group>"; };
-		654B2BAB2AAB04AA0084CFBA /* HorizontalThirdsRepeated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalThirdsRepeated.swift; sourceTree = "<group>"; };
-		654B2BAC2AAB04AA0084CFBA /* TopLeftThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLeftThirdCalculation.swift; sourceTree = "<group>"; };
-		654B2BAD2AAB04AA0084CFBA /* FirstFourthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFourthCalculation.swift; sourceTree = "<group>"; };
-		654B2BAE2AAB04AA0084CFBA /* BottomRightThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRightThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BB02AAB04AA0084CFBA /* SnapAreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapAreaModel.swift; sourceTree = "<group>"; };
 		654B2BB12AAB04AA0084CFBA /* FootprintWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootprintWindow.swift; sourceTree = "<group>"; };
 		654B2BB32AAB04AA0084CFBA /* ThirdsCompoundCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdsCompoundCalculation.swift; sourceTree = "<group>"; };
@@ -306,26 +228,11 @@
 		654B2ADF2AAB02FE0084CFBA /* MacMenu */ = {
 			isa = PBXGroup;
 			children = (
-				654B2BAF2AAB04AA0084CFBA /* Snapping */,
-				654B2B5C2AAB04A90084CFBA /* Utilities */,
-				654B2B6C2AAB04A90084CFBA /* WindowCalculation */,
-				654B2B512AAB049C0084CFBA /* WindowMover */,
-				654B2B4C2AAB046F0084CFBA /* MultiWindow */,
-				654B2B362AAB03AF0084CFBA /* AccessibilityElement.swift */,
+				654B2C122AB052B30084CFBA /* WindowManager */,
 				654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */,
-				654B2B392AAB03AF0084CFBA /* ApplicationToggle.swift */,
-				654B2B3B2AAB03B00084CFBA /* Defaults.swift */,
-				654B2B382AAB03AF0084CFBA /* EventTap.swift */,
 				654B2B332AAB03AF0084CFBA /* main.swift */,
-				654B2B322AAB03AF0084CFBA /* ScreenDetection.swift */,
-				654B2B312AAB03AF0084CFBA /* SubsequentExecutionMode.swift */,
-				654B2B372AAB03AF0084CFBA /* WindowAction.swift */,
-				654B2B352AAB03AF0084CFBA /* WindowActionCategory.swift */,
-				654B2B3D2AAB03B00084CFBA /* WindowHistory.swift */,
-				654B2B342AAB03AF0084CFBA /* WindowManager.swift */,
 				654B2AE42AAB03110084CFBA /* Assets.xcassets */,
 				654B2AE92AAB03110084CFBA /* MacMenu.entitlements */,
-				654B2B4A2AAB03D20084CFBA /* MacMenu-Bridging-Header.h */,
 			);
 			path = MacMenu;
 			sourceTree = "<group>";
@@ -393,72 +300,35 @@
 		654B2B6C2AAB04A90084CFBA /* WindowCalculation */ = {
 			isa = PBXGroup;
 			children = (
-				654B2B6D2AAB04A90084CFBA /* NextPrevDisplayCalculation.swift */,
-				654B2B6E2AAB04A90084CFBA /* BottomHalfCalculation.swift */,
-				654B2B6F2AAB04A90084CFBA /* BottomLeftEighthCalculation.swift */,
-				654B2B702AAB04A90084CFBA /* BottomLeftThirdCalculation.swift */,
-				654B2B712AAB04A90084CFBA /* UpperRightCalculation.swift */,
-				654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */,
-				654B2B732AAB04A90084CFBA /* MiddleLeftNinthCalculation.swift */,
-				654B2B742AAB04A90084CFBA /* WindowCalculation.swift */,
-				654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */,
-				654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */,
-				654B2B772AAB04A90084CFBA /* FirstThreeFourthsCalculation.swift */,
-				654B2B782AAB04A90084CFBA /* EighthsRepeated.swift */,
-				654B2B792AAB04A90084CFBA /* TopLeftEighthCalculation.swift */,
-				654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */,
-				654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */,
-				654B2B7C2AAB04A90084CFBA /* ThirdFourthCalculation.swift */,
-				654B2B7D2AAB04A90084CFBA /* SecondFourthCalculation.swift */,
-				654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */,
-				654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */,
-				654B2B802AAB04A90084CFBA /* GapCalculation.swift */,
-				654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */,
-				654B2B822AAB04A90084CFBA /* BottomLeftSixthCalculation.swift */,
-				654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */,
 				654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */,
-				654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */,
-				654B2B862AAB04A90084CFBA /* BottomCenterRightEighthCalculation.swift */,
-				654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */,
-				654B2B882AAB04A90084CFBA /* MiddleRightNinthCalculation.swift */,
-				654B2B892AAB04A90084CFBA /* SixthsRepeated.swift */,
-				654B2B8A2AAB04A90084CFBA /* NinthsRepeated.swift */,
-				654B2B8B2AAB04A90084CFBA /* BottomLeftNinthCalculation.swift */,
-				654B2B8C2AAB04A90084CFBA /* RightTodoCalculation.swift */,
-				654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */,
-				654B2B8E2AAB04A90084CFBA /* TopCenterRightEighthCalculation.swift */,
-				654B2B8F2AAB04A90084CFBA /* LastThreeFourthsCalculation.swift */,
-				654B2B902AAB04A90084CFBA /* BottomRightNinthCalculation.swift */,
-				654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */,
-				654B2B922AAB04A90084CFBA /* TopLeftNinthCalculation.swift */,
-				654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */,
-				654B2B942AAB04A90084CFBA /* TopRightSixthCalculation.swift */,
-				654B2B952AAB04A90084CFBA /* MiddleCenterNinthCalculation.swift */,
-				654B2B962AAB04A90084CFBA /* TopLeftSixthCalculation.swift */,
-				654B2B972AAB04A90084CFBA /* BottomRightEighthCalculation.swift */,
-				654B2B982AAB04A90084CFBA /* BottomRightSixthCalculation.swift */,
-				654B2B992AAB04A90084CFBA /* TopRightNinthCalculation.swift */,
-				654B2B9A2AAB04A90084CFBA /* TopCenterLeftEighthCalculation.swift */,
-				654B2B9B2AAB04A90084CFBA /* TopRightEighthCalculation.swift */,
-				654B2B9C2AAB04A90084CFBA /* LastFourthCalculation.swift */,
 				654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */,
-				654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */,
-				654B2B9F2AAB04A90084CFBA /* LeftTodoCalculation.swift */,
-				654B2BA02AAB04A90084CFBA /* TopRightThirdCalculation.swift */,
-				654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */,
-				654B2BA22AAB04A90084CFBA /* BottomCenterLeftEighthCalculation.swift */,
-				654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */,
+				654B2B6E2AAB04A90084CFBA /* BottomHalfCalculation.swift */,
+				654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */,
+				654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */,
 				654B2BA42AAB04A90084CFBA /* CenterThirdCalculation.swift */,
-				654B2BA52AAB04A90084CFBA /* OrientationAware.swift */,
+				654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */,
+				654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */,
+				654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */,
+				654B2B802AAB04A90084CFBA /* GapCalculation.swift */,
+				654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */,
 				654B2BA62AAB04A90084CFBA /* LastTwoThirdsCalculation.swift */,
+				654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */,
+				654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */,
+				654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */,
+				654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */,
+				654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */,
+				654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */,
 				654B2BA72AAB04A90084CFBA /* MoveUpDownCalculation.swift */,
-				654B2BA82AAB04A90084CFBA /* BottomCenterNinthCalculation.swift */,
+				654B2B6D2AAB04A90084CFBA /* NextPrevDisplayCalculation.swift */,
+				654B2BA52AAB04A90084CFBA /* OrientationAware.swift */,
 				654B2BA92AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift */,
-				654B2BAA2AAB04AA0084CFBA /* TopCenterNinthCalculation.swift */,
-				654B2BAB2AAB04AA0084CFBA /* HorizontalThirdsRepeated.swift */,
-				654B2BAC2AAB04AA0084CFBA /* TopLeftThirdCalculation.swift */,
-				654B2BAD2AAB04AA0084CFBA /* FirstFourthCalculation.swift */,
-				654B2BAE2AAB04AA0084CFBA /* BottomRightThirdCalculation.swift */,
+				654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */,
+				654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */,
+				654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */,
+				654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */,
+				654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */,
+				654B2B712AAB04A90084CFBA /* UpperRightCalculation.swift */,
+				654B2B742AAB04A90084CFBA /* WindowCalculation.swift */,
 			);
 			path = WindowCalculation;
 			sourceTree = "<group>";
@@ -466,9 +336,9 @@
 		654B2BAF2AAB04AA0084CFBA /* Snapping */ = {
 			isa = PBXGroup;
 			children = (
+				654B2BB22AAB04AA0084CFBA /* CompoundSnapArea */,
 				654B2BB02AAB04AA0084CFBA /* SnapAreaModel.swift */,
 				654B2BB12AAB04AA0084CFBA /* FootprintWindow.swift */,
-				654B2BB22AAB04AA0084CFBA /* CompoundSnapArea */,
 				654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */,
 			);
 			path = Snapping;
@@ -484,6 +354,27 @@
 				654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */,
 			);
 			path = CompoundSnapArea;
+			sourceTree = "<group>";
+		};
+		654B2C122AB052B30084CFBA /* WindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				654B2BAF2AAB04AA0084CFBA /* Snapping */,
+				654B2B5C2AAB04A90084CFBA /* Utilities */,
+				654B2B6C2AAB04A90084CFBA /* WindowCalculation */,
+				654B2B512AAB049C0084CFBA /* WindowMover */,
+				654B2B4C2AAB046F0084CFBA /* MultiWindow */,
+				654B2B362AAB03AF0084CFBA /* AccessibilityElement.swift */,
+				654B2B3B2AAB03B00084CFBA /* Constants.swift */,
+				654B2B322AAB03AF0084CFBA /* ScreenDetection.swift */,
+				654B2B312AAB03AF0084CFBA /* SubsequentExecutionMode.swift */,
+				654B2B372AAB03AF0084CFBA /* WindowAction.swift */,
+				654B2B352AAB03AF0084CFBA /* WindowActionCategory.swift */,
+				654B2B3D2AAB03B00084CFBA /* WindowHistory.swift */,
+				654B2B342AAB03AF0084CFBA /* WindowManager.swift */,
+				654B2B4A2AAB03D20084CFBA /* MacMenu-Bridging-Header.h */,
+			);
+			path = WindowManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,106 +514,67 @@
 				654B2BDB2AAB04AA0084CFBA /* GapCalculation.swift in Sources */,
 				654B2B482AAB03B00084CFBA /* AppDelegate.swift in Sources */,
 				654B2C0E2AAB04AA0084CFBA /* SixthsCompoundCalculation.swift in Sources */,
-				654B2BDD2AAB04AA0084CFBA /* BottomLeftSixthCalculation.swift in Sources */,
 				654B2BFE2AAB04AA0084CFBA /* FirstThirdCalculation.swift in Sources */,
 				654B2BE82AAB04AA0084CFBA /* UpperLeftCalculation.swift in Sources */,
 				654B2BBD2AAB04AA0084CFBA /* CFExtension.swift in Sources */,
 				654B2BCF2AAB04AA0084CFBA /* WindowCalculation.swift in Sources */,
-				654B2C092AAB04AA0084CFBA /* BottomRightThirdCalculation.swift in Sources */,
 				654B2BEC2AAB04AA0084CFBA /* LeftRightHalfCalculation.swift in Sources */,
-				654B2B452AAB03B00084CFBA /* EventTap.swift in Sources */,
-				654B2BFB2AAB04AA0084CFBA /* TopRightThirdCalculation.swift in Sources */,
-				654B2BF72AAB04AA0084CFBA /* LastFourthCalculation.swift in Sources */,
-				654B2BE92AAB04AA0084CFBA /* TopCenterRightEighthCalculation.swift in Sources */,
 				654B2C012AAB04AA0084CFBA /* LastTwoThirdsCalculation.swift in Sources */,
 				654B2BC32AAB04AA0084CFBA /* Debounce.swift in Sources */,
-				654B2BE62AAB04AA0084CFBA /* BottomLeftNinthCalculation.swift in Sources */,
 				654B2C002AAB04AA0084CFBA /* OrientationAware.swift in Sources */,
 				654B2BDE2AAB04AA0084CFBA /* MaximizeHeightCalculation.swift in Sources */,
 				654B2B5A2AAB049C0084CFBA /* StandardWindowMover.swift in Sources */,
-				654B2BE42AAB04AA0084CFBA /* SixthsRepeated.swift in Sources */,
-				654B2BE52AAB04AA0084CFBA /* NinthsRepeated.swift in Sources */,
 				654B2BFC2AAB04AA0084CFBA /* TopCenterSixthCalculation.swift in Sources */,
 				654B2BBE2AAB04AA0084CFBA /* NotificationExtension.swift in Sources */,
 				654B2BE02AAB04AA0084CFBA /* LastThirdCalculation.swift in Sources */,
 				654B2BC42AAB04AA0084CFBA /* NSImageExtension.swift in Sources */,
 				654B2B3E2AAB03B00084CFBA /* SubsequentExecutionMode.swift in Sources */,
-				654B2C062AAB04AA0084CFBA /* HorizontalThirdsRepeated.swift in Sources */,
 				654B2BC02AAB04AA0084CFBA /* DispatchTimeExtension.swift in Sources */,
 				654B2B442AAB03B00084CFBA /* WindowAction.swift in Sources */,
 				654B2BBF2AAB04AA0084CFBA /* TimeoutCache.swift in Sources */,
 				654B2BDA2AAB04AA0084CFBA /* TopHalfCalculation.swift in Sources */,
-				654B2BD42AAB04AA0084CFBA /* TopLeftEighthCalculation.swift in Sources */,
-				654B2BD72AAB04AA0084CFBA /* ThirdFourthCalculation.swift in Sources */,
-				654B2BD22AAB04AA0084CFBA /* FirstThreeFourthsCalculation.swift in Sources */,
 				654B2B592AAB049C0084CFBA /* BestEffortWindowMover.swift in Sources */,
 				654B2BC92AAB04AA0084CFBA /* BottomHalfCalculation.swift in Sources */,
 				654B2C0F2AAB04AA0084CFBA /* CompoundSnapArea.swift in Sources */,
 				654B2BC72AAB04AA0084CFBA /* CUtil.swift in Sources */,
 				654B2C0D2AAB04AA0084CFBA /* HalvesCompoundCalculation.swift in Sources */,
 				654B2BBB2AAB04AA0084CFBA /* RunLoopThread.swift in Sources */,
-				654B2BF12AAB04AA0084CFBA /* TopLeftSixthCalculation.swift in Sources */,
 				654B2BCC2AAB04AA0084CFBA /* UpperRightCalculation.swift in Sources */,
-				654B2BF42AAB04AA0084CFBA /* TopRightNinthCalculation.swift in Sources */,
-				654B2BCA2AAB04AA0084CFBA /* BottomLeftEighthCalculation.swift in Sources */,
 				654B2C042AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift in Sources */,
 				654B2BDC2AAB04AA0084CFBA /* CenterHalfCalculation.swift in Sources */,
-				654B2BF52AAB04AA0084CFBA /* TopCenterLeftEighthCalculation.swift in Sources */,
 				654B2BBA2AAB04AA0084CFBA /* CGExtension.swift in Sources */,
 				654B2C0C2AAB04AA0084CFBA /* ThirdsCompoundCalculation.swift in Sources */,
-				654B2BF22AAB04AA0084CFBA /* BottomRightEighthCalculation.swift in Sources */,
-				654B2BF62AAB04AA0084CFBA /* TopRightEighthCalculation.swift in Sources */,
 				654B2B502AAB04920084CFBA /* ReverseAllManager.swift in Sources */,
 				654B2BC12AAB04AA0084CFBA /* AXExtension.swift in Sources */,
 				654B2B492AAB03B00084CFBA /* WindowHistory.swift in Sources */,
 				654B2BC22AAB04AA0084CFBA /* SequenceExtension.swift in Sources */,
-				654B2BE12AAB04AA0084CFBA /* BottomCenterRightEighthCalculation.swift in Sources */,
-				654B2BD32AAB04AA0084CFBA /* EighthsRepeated.swift in Sources */,
-				654B2BEF2AAB04AA0084CFBA /* TopRightSixthCalculation.swift in Sources */,
-				654B2BF32AAB04AA0084CFBA /* BottomRightSixthCalculation.swift in Sources */,
 				654B2BD62AAB04AA0084CFBA /* ChangeSizeCalculation.swift in Sources */,
 				654B2BFF2AAB04AA0084CFBA /* CenterThirdCalculation.swift in Sources */,
-				654B2BCE2AAB04AA0084CFBA /* MiddleLeftNinthCalculation.swift in Sources */,
 				654B2C022AAB04AA0084CFBA /* MoveUpDownCalculation.swift in Sources */,
-				654B2BD82AAB04AA0084CFBA /* SecondFourthCalculation.swift in Sources */,
-				654B2BED2AAB04AA0084CFBA /* TopLeftNinthCalculation.swift in Sources */,
 				654B2B572AAB049C0084CFBA /* WindowMover.swift in Sources */,
-				654B2BFD2AAB04AA0084CFBA /* BottomCenterLeftEighthCalculation.swift in Sources */,
 				654B2B432AAB03B00084CFBA /* AccessibilityElement.swift in Sources */,
-				654B2B462AAB03B00084CFBA /* ApplicationToggle.swift in Sources */,
 				654B2BC62AAB04AA0084CFBA /* StageUtil.swift in Sources */,
 				654B2BBC2AAB04AA0084CFBA /* AlertUtil.swift in Sources */,
 				654B2BF92AAB04AA0084CFBA /* FirstTwoThirdsCalculation.swift in Sources */,
 				654B2C102AAB04AA0084CFBA /* FourthsCompoundCalculation.swift in Sources */,
 				654B2C0B2AAB04AA0084CFBA /* FootprintWindow.swift in Sources */,
 				654B2BE22AAB04AA0084CFBA /* LowerLeftCalculation.swift in Sources */,
-				654B2BEB2AAB04AA0084CFBA /* BottomRightNinthCalculation.swift in Sources */,
 				654B2BC82AAB04AA0084CFBA /* NextPrevDisplayCalculation.swift in Sources */,
 				654B2BC52AAB04AA0084CFBA /* EventMonitor.swift in Sources */,
 				654B2B412AAB03B00084CFBA /* WindowManager.swift in Sources */,
-				654B2BE72AAB04AA0084CFBA /* RightTodoCalculation.swift in Sources */,
-				654B2BEA2AAB04AA0084CFBA /* LastThreeFourthsCalculation.swift in Sources */,
 				654B2BCD2AAB04AA0084CFBA /* MaximizeCalculation.swift in Sources */,
 				654B2C112AAB04AA0084CFBA /* SnappingManager.swift in Sources */,
-				654B2BCB2AAB04AA0084CFBA /* BottomLeftThirdCalculation.swift in Sources */,
 				654B2BD92AAB04AA0084CFBA /* CenterCalculation.swift in Sources */,
 				654B2B4F2AAB04920084CFBA /* MultiWindowManager.swift in Sources */,
-				654B2BFA2AAB04AA0084CFBA /* LeftTodoCalculation.swift in Sources */,
-				654B2BE32AAB04AA0084CFBA /* MiddleRightNinthCalculation.swift in Sources */,
 				654B2B422AAB03B00084CFBA /* WindowActionCategory.swift in Sources */,
-				654B2B472AAB03B00084CFBA /* Defaults.swift in Sources */,
+				654B2B472AAB03B00084CFBA /* Constants.swift in Sources */,
 				654B2B3F2AAB03B00084CFBA /* ScreenDetection.swift in Sources */,
 				654B2BD52AAB04AA0084CFBA /* RepeatedExecutionsInThirdsCalculation.swift in Sources */,
-				654B2C082AAB04AA0084CFBA /* FirstFourthCalculation.swift in Sources */,
-				654B2C032AAB04AA0084CFBA /* BottomCenterNinthCalculation.swift in Sources */,
 				654B2BD12AAB04AA0084CFBA /* SpecifiedCalculation.swift in Sources */,
 				654B2BEE2AAB04AA0084CFBA /* LowerRightCalculation.swift in Sources */,
 				654B2BB92AAB04AA0084CFBA /* WindowUtil.swift in Sources */,
 				654B2C0A2AAB04AA0084CFBA /* SnapAreaModel.swift in Sources */,
-				654B2BF02AAB04AA0084CFBA /* MiddleCenterNinthCalculation.swift in Sources */,
 				654B2B582AAB049C0084CFBA /* CenteringFixedSizedWindowMover.swift in Sources */,
-				654B2C052AAB04AA0084CFBA /* TopCenterNinthCalculation.swift in Sources */,
-				654B2C072AAB04AA0084CFBA /* TopLeftThirdCalculation.swift in Sources */,
 				654B2B402AAB03B00084CFBA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,7 +748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.dan-koller.MacMenu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MacMenu/MacMenu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MacMenu/WindowManager/MacMenu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -925,7 +777,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.dan-koller.MacMenu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MacMenu/MacMenu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MacMenu/WindowManager/MacMenu-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

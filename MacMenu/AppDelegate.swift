@@ -15,9 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     static let windowHistory = WindowHistory()
     
-    var windowManager: WindowManager!
-    var snappingManager: SnappingManager!
-    private var applicationToggle: ApplicationToggle!
+    private var windowManager: WindowManager!
+    private var snappingManager: SnappingManager!
     private var windowCalculationFactory: WindowCalculationFactory!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -53,13 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func accessibilityTrusted() {
         self.windowCalculationFactory = WindowCalculationFactory()
         self.windowManager = WindowManager()
-        self.applicationToggle = ApplicationToggle()
-        self.snappingManager = SnappingManager(applicationToggle: applicationToggle)
-    }
-    
-    /// Workaround to toggle the window manager function off
-    func turnWindowManagerOff() {
-        self.snappingManager.disableSnapping()
+        self.snappingManager = SnappingManager()
     }
     
     func requestAccessibilityPermissions() {
@@ -82,6 +75,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             }
         }
+    }
+    
+    func toggleWindowManager(_ isListening: Bool) {
+        snappingManager.toggleListening(isListening)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -193,6 +190,7 @@ struct WindowManagerView: View {
     }
 
     var body: some View {
+        let appDelegate = NSApp.delegate as! AppDelegate
         HStack {
             Text("Window manager")
                 .font(.headline)
@@ -201,17 +199,8 @@ struct WindowManagerView: View {
             
             Toggle("", isOn: $isWindowManagerEnabled)
                 .toggleStyle(SwitchToggleStyle())
-            // Event listener for changes
-                .onChange(of: isWindowManagerEnabled) { newValue in
-                    print("Window Manager Enabled: \(newValue)")
-                    // TODO: Following solution works, but terrible implementation :(
-                    if newValue {
-                        let appDelegate = NSApp.delegate as! AppDelegate
-                        appDelegate.accessibilityTrusted()
-                    } else {
-                        let appDelegate = NSApp.delegate as! AppDelegate
-                        appDelegate.turnWindowManagerOff()
-                    }
+                .onChange(of: isWindowManagerEnabled) { listening in
+                    appDelegate.toggleWindowManager(listening)
                 }
         }
         .padding(5)
