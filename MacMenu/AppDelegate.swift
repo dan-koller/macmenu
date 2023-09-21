@@ -108,7 +108,7 @@ enum GaugeType {
 struct GaugeView: View {
     var title: String
     var gaugeType: GaugeType
-    var value: Double
+    var value: Float
     
     var body: some View {
         VStack {
@@ -121,7 +121,7 @@ struct GaugeView: View {
 struct Gauge: View {
     let title: String
     let gaugeType: GaugeType
-    let value: Double // Value between 0 and 1
+    let value: Float // Value between 0 and 1
 
     var body: some View {
         ZStack {
@@ -146,16 +146,47 @@ struct Gauge: View {
     }
 }
 
+class SystemInfoViewModel: ObservableObject {
+    @Published var cpuLoad: Float = 0.0
+    @Published var ramUsage: Float = 0.0
+    @Published var diskUsage: Float = 0.0
+    
+    private let systemInfo = SystemInfo()
+    
+    init() {
+        // Initialize data
+        updateData()
+    }
+    
+    func updateData() {
+        cpuLoad = systemInfo.DEBUG_CPU_LOAD()
+        ramUsage = systemInfo.DEBUG_MEMORY_USAGE()
+        diskUsage = systemInfo.getDisk()
+    }
+    
+    func startUpdatingData() {
+        // Start a timer to update the data every 2 seconds
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+            self.updateData()
+        }
+    }
+}
+
 struct SystemInfoView: View {
+    @ObservedObject private var viewModel: SystemInfoViewModel = SystemInfoViewModel()
+    
     var body: some View {
         HStack(spacing: 20) {
-            GaugeView(title: "CPU", gaugeType: .cpuLoad, value: 0.75) // Example value, should be replaced with actual data
-            GaugeView(title: "MEM", gaugeType: .ramUsage, value: 0.50) // Example value, should be replaced with actual data
-            GaugeView(title: "DISK",gaugeType: .diskUsage, value: 0.30) // Example value, should be replaced with actual data
+            GaugeView(title: "CPU", gaugeType: .cpuLoad, value: viewModel.cpuLoad)
+            GaugeView(title: "MEM", gaugeType: .ramUsage, value: viewModel.ramUsage)
+            GaugeView(title: "DISK",gaugeType: .diskUsage, value: viewModel.diskUsage)
         }
         .padding(10)
         .frame(maxWidth: .infinity)
         .cornerRadius(8)
+        .onAppear {
+            viewModel.startUpdatingData()
+        }
     }
 }
 
