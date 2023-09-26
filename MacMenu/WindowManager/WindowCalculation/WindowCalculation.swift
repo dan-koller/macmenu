@@ -144,6 +144,7 @@ class WindowCalculationFactory {
     static let moveUpCalculation = MoveUpDownCalculation()
     static let moveDownCalculation = MoveUpDownCalculation()
 
+    // Add actions for window calculations here
     static let calculationsByAction: [WindowAction: WindowCalculation] = [
      .leftHalf: leftHalfCalculation,
      .rightHalf: rightHalfCalculation,
@@ -160,6 +161,7 @@ class WindowCalculationFactory {
      .bottomRight: lowerRightCalculation,
      .topLeft: upperLeftCalculation,
      .topRight: upperRightCalculation,
+     .centerHalf: centerHalfCalculation,
      .firstThird: firstThirdCalculation,
      .firstTwoThirds: firstTwoThirdsCalculation,
      .centerThird: centerThirdCalculation,

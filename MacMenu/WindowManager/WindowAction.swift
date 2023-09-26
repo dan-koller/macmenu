@@ -1,6 +1,6 @@
 //
 //  WindowAction.swift
-//  MacMenu
+//  MacMenu, Ported from Rectangle
 //
 //  Created by Daniel Koller on 06.09.23.
 //
@@ -8,6 +8,12 @@
 import Foundation
 import Carbon
 import Cocoa
+import MASShortcut
+
+fileprivate let alt = NSEvent.ModifierFlags.option.rawValue
+fileprivate let ctrl = NSEvent.ModifierFlags.control.rawValue
+fileprivate let shift = NSEvent.ModifierFlags.shift.rawValue
+fileprivate let cmd = NSEvent.ModifierFlags.command.rawValue
 
 enum WindowAction: Int, Codable {
     case leftHalf = 0,
@@ -201,142 +207,6 @@ enum WindowAction: Int, Codable {
         }
     }
 
-    var displayName: String? {
-        var key: String
-        var value: String
-
-        switch self {
-        case .leftHalf:
-            key = "Xc8-Sm-pig.title"
-            value = "Left Half"
-        case .rightHalf:
-            key = "F8S-GI-LiB.title"
-            value = "Right Half"
-        case .maximize:
-            key = "8oe-J2-oUU.title"
-            value = "Maximize"
-        case .maximizeHeight:
-            key = "6DV-cd-fda.title"
-            value = "Maximize Height"
-        case .previousDisplay:
-            key = "QwF-QN-YH7.title"
-            value = "Previous Display"
-        case .nextDisplay:
-            key = "Jnd-Lc-nlh.title"
-            value = "Next Display"
-        case .larger:
-            key = "Eah-KL-kbn.title"
-            value = "Larger"
-        case .smaller:
-            key = "MzN-CJ-ASD.title"
-            value = "Smaller"
-        case .bottomHalf:
-            key = "ec4-FB-fMa.title"
-            value = "Bottom Half"
-        case .topHalf:
-            key = "d7y-s8-7GE.title"
-            value = "Top Half"
-        case .center:
-            key = "8Bg-SZ-hDO.title"
-            value = "Center"
-        case .bottomLeft:
-            key = "6ma-hP-5xX.title"
-            value = "Bottom Left"
-        case .bottomRight:
-            key = "J6t-sg-Wwz.title"
-            value = "Bottom Right"
-        case .topLeft:
-            key = "adp-cN-qkh.title"
-            value = "Top Left"
-        case .topRight:
-            key = "0Ak-33-SM7.title"
-            value = "Top Right"
-        case .restore:
-            key = "C9v-g0-DH8.title"
-            value = "Restore"
-        case .firstThird:
-            key = "F12-EV-Lfz.title"
-            value = "First Third"
-        case .firstTwoThirds:
-            key = "3zd-xE-oWl.title"
-            value = "First Two Thirds"
-        case .centerThird:
-            key = "7YK-9Z-lzw.title"
-            value = "Center Third"
-        case .lastTwoThirds:
-            key = "08q-Ce-1QL.title"
-            value = "Last Two Thirds"
-        case .lastThird:
-            key = "cRm-wn-Yv6.title"
-            value = "Last Third"
-        case .moveLeft:
-            key = "v2f-bX-xiM.title"
-            value = "Move Left"
-        case .moveRight:
-            key = "rzr-Qq-702.title"
-            value = "Move Right"
-        case .moveUp:
-            key = "HOm-BV-2jc.title"
-            value = "Move Up"
-        case .moveDown:
-            key = "1Rc-Od-eP5.title"
-            value = "Move Down"
-        case .almostMaximize:
-            key = "e57-QJ-6bL.title"
-            value = "Almost Maximize"
-        case .centerHalf:
-            key = "bRX-dV-iAR.title"
-            value = "Center Half"
-        case .firstFourth:
-            key = "Q6Q-6J-okH.title"
-            value = "First Fourth"
-        case .secondFourth:
-            key = "Fko-xs-gN5.title"
-            value = "Second Fourth"
-        case .thirdFourth:
-            key = "ZTK-rS-b17.title"
-            value = "Third Fourth"
-        case .lastFourth:
-            key = "6HX-rn-VIp.title"
-            value = "Last Fourth"
-        case .firstThreeFourths:
-            key = "T9Z-QF-gwc.title"
-            value = "First Three Fourths"
-        case .lastThreeFourths:
-            key = "nwX-h6-fwm.title"
-            value = "Last Three Fourths"
-        case .topLeftSixth:
-            key = "mFt-Kg-UYG.title"
-            value = "Top Left Sixth"
-        case .topCenterSixth:
-            key = "TTx-7X-Wie.title"
-            value = "Top Center Sixth"
-        case .topRightSixth:
-            key = "f3Q-q7-Pcy.title"
-            value = "Top Right Sixth"
-        case .bottomLeftSixth:
-            key = "LqQ-pM-jRN.title"
-            value = "Bottom Left Sixth"
-        case .bottomCenterSixth:
-            key = "iOQ-1e-esP.title"
-            value = "Bottom Center Sixth"
-        case .bottomRightSixth:
-            key = "m2F-eA-g7w.title"
-            value = "Bottom Right Sixth"
-        case .topLeftNinth, .topCenterNinth, .topRightNinth, .middleLeftNinth, .middleCenterNinth, .middleRightNinth, .bottomLeftNinth, .bottomCenterNinth, .bottomRightNinth:
-            return nil
-        case .topLeftThird, .topRightThird, .bottomLeftThird, .bottomRightThird:
-            return nil
-        case .topLeftEighth, .topCenterLeftEighth, .topCenterRightEighth, .topRightEighth,
-                .bottomLeftEighth, .bottomCenterLeftEighth, .bottomCenterRightEighth, .bottomRightEighth:
-            return nil
-        case .specified, .reverseAll, .tileAll, .cascadeAll, .leftTodo, .rightTodo, .cascadeActiveApp:
-            return nil
-        }
-
-        return NSLocalizedString(key, tableName: "Main", value: value, comment: "")
-    }
-
     var notificationName: Notification.Name {
         return Notification.Name(name)
     }
@@ -371,6 +241,21 @@ enum WindowAction: Int, Codable {
         }
     }
 
+    // When registering new shortcuts, check 'WindowCalculation.calculationsByAction',
+    // to see if the window action has a corresponding calculation result
+    var defaultShortcuts: Shortcut? {
+        switch self {
+        case .leftHalf: return Shortcut( ctrl|alt, kVK_LeftArrow )
+        case .rightHalf: return Shortcut( ctrl|alt, kVK_RightArrow )
+        case .centerHalf: return Shortcut( ctrl|alt, kVK_DownArrow )
+        case .maximize: return Shortcut( ctrl|alt, kVK_UpArrow )
+        case .center: return Shortcut( ctrl|alt, kVK_ANSI_C )
+        case .bottomHalf: return Shortcut( ctrl|alt|cmd, kVK_DownArrow )
+        case .topHalf: return Shortcut( ctrl|alt|cmd, kVK_UpArrow )
+        default: return nil
+        }
+    }
+    
     var image: NSImage {
         switch self {
         case .leftHalf: return NSImage(imageLiteralResourceName: "leftHalfTemplate")
@@ -656,6 +541,30 @@ enum SubWindowAction {
         case .leftTodo: return .right
         case .rightTodo: return .left
         }
+    }
+}
+
+struct Shortcut: Codable {
+    let keyCode: Int
+    let modifierFlags: UInt
+    
+    init(_ modifierFlags: UInt, _ keyCode: Int) {
+        self.keyCode = keyCode
+        self.modifierFlags = modifierFlags
+    }
+    
+    init(masShortcut: MASShortcut) {
+        self.keyCode = masShortcut.keyCode
+        self.modifierFlags = masShortcut.modifierFlags.rawValue
+    }
+    
+    func toMASSHortcut() -> MASShortcut {
+        MASShortcut(keyCode: keyCode, modifierFlags: NSEvent.ModifierFlags(rawValue: modifierFlags))
+    }
+    
+    func displayString() -> String {
+        let masShortcut = toMASSHortcut()
+        return masShortcut.modifierFlagsString + (masShortcut.keyCodeString ?? "")
     }
 }
 

@@ -17,11 +17,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private var windowManager: WindowManager!
     private var snappingManager: SnappingManager!
-    private var windowCalculationFactory: WindowCalculationFactory!
+    private var shortcutManager: ShortcutManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let systemInfoView = SystemInfoView()
-        let keyboardCleaningView = KeyboardCleaningView()
+        let keyboardCleaningView = CleaningModeView()
         let windowManagerView = WindowManagerView()
         
         let popoverView = PopoverView(
@@ -39,32 +39,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the status bar item
         statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         if let statusButton = statusBar.button {
-            statusButton.image = NSImage(systemSymbolName: "speedometer", accessibilityDescription: "MenuApp")
+            statusButton.image = NSImage(systemSymbolName: "speedometer", accessibilityDescription: "MacMenu")
             statusButton.action = #selector(togglePopover(_:))
         }
         
         // Request permissions and start the wm
         requestAccessibilityPermissions()
-        accessibilityTrusted()
-    }
-    
-    /// The window manager is initialized using a chain & factory pattern
-    func accessibilityTrusted() {
-        self.windowCalculationFactory = WindowCalculationFactory()
-        self.windowManager = WindowManager()
-        self.snappingManager = SnappingManager()
-    }
-    
-    func requestAccessibilityPermissions() {
-        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
-        
-        let trusted = AXIsProcessTrustedWithOptions(options)
-        
-        if trusted {
-            print("Accessibility permissions granted.")
-        } else {
-            print("Accessibility permissions denied.")
-        }
+        initializeWindowManager()
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -77,6 +58,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    // Disable xcode sandbox when developing to get an accessibilty prompt when developing
+    func requestAccessibilityPermissions() {
+        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
+        
+        let trusted = AXIsProcessTrustedWithOptions(options)
+        if trusted {
+            print("Accessibility permissions granted.")
+        } else {
+            print("Accessibility permissions denied.")
+        }
+    }
+    
+    func initializeWindowManager() {
+        self.windowManager = WindowManager()
+        self.snappingManager = SnappingManager()
+        self.shortcutManager = ShortcutManager(windowManager: windowManager)
+    }
+
     func toggleWindowManager(_ isListening: Bool) {
         snappingManager.toggleListening(isListening)
     }
@@ -190,12 +189,12 @@ struct SystemInfoView: View {
     }
 }
 
-struct KeyboardCleaningView: View {
+struct CleaningModeView: View {
     @State private var isCleaningEnabled = false
 
     var body: some View {
         HStack {
-            Text("Keyboard Cleaning")
+            Text("Cleaning mode")
                 .font(.headline)
             
             Spacer()
@@ -204,7 +203,7 @@ struct KeyboardCleaningView: View {
                 .toggleStyle(SwitchToggleStyle())
             // Event listener for changes
                 .onChange(of: isCleaningEnabled) { newValue in
-                    print("Keyboard Cleaning Enabled: \(newValue)")
+                    print("Cleaning mode Enabled: \(newValue)")
                 }
         }
         .padding(5)
@@ -242,7 +241,7 @@ struct WindowManagerView: View {
 
 struct PopoverView: View {
     let systemInfoView: SystemInfoView
-    let keyboardCleaningView: KeyboardCleaningView
+    let keyboardCleaningView: CleaningModeView
     let windowManagerView: WindowManagerView
     
     var body: some View {

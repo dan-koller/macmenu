@@ -82,6 +82,8 @@
 		654B2C112AAB04AA0084CFBA /* SnappingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */; };
 		654B2C152AB05F7A0084CFBA /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2C142AB05F7A0084CFBA /* SystemInfo.swift */; };
 		654B2C182AB05F8B0084CFBA /* SystemInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 654B2C172AB05F8B0084CFBA /* SystemInfo.c */; };
+		65E770CB2ABF4DAD0037D593 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */; };
+		65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 65E770CD2AC16D070037D593 /* MASShortcut */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +185,7 @@
 		654B2C142AB05F7A0084CFBA /* SystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
 		654B2C162AB05F8B0084CFBA /* SystemInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemInfo.h; sourceTree = "<group>"; };
 		654B2C172AB05F8B0084CFBA /* SystemInfo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SystemInfo.c; sourceTree = "<group>"; };
+		65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +241,7 @@
 				654B2C122AB052B30084CFBA /* WindowManager */,
 				654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */,
 				654B2B332AAB03AF0084CFBA /* main.swift */,
+				65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */,
 				654B2AE42AAB03110084CFBA /* Assets.xcassets */,
 				654B2AE92AAB03110084CFBA /* MacMenu.entitlements */,
 				654B2B4A2AAB03D20084CFBA /* MacMenu-Bridging-Header.h */,
@@ -409,6 +414,9 @@
 			dependencies = (
 			);
 			name = MacMenu;
+			packageProductDependencies = (
+				65E770CD2AC16D070037D593 /* MASShortcut */,
+			);
 			productName = MacMenu;
 			productReference = 654B2ADD2AAB02FE0084CFBA /* MacMenu.app */;
 			productType = "com.apple.product-type.application";
@@ -482,6 +490,9 @@
 				Base,
 			);
 			mainGroup = 654B2AD42AAB02FD0084CFBA;
+			packageReferences = (
+				65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+			);
 			productRefGroup = 654B2ADE2AAB02FE0084CFBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -578,6 +589,7 @@
 				654B2C0B2AAB04AA0084CFBA /* FootprintWindow.swift in Sources */,
 				654B2BE22AAB04AA0084CFBA /* LowerLeftCalculation.swift in Sources */,
 				654B2BC82AAB04AA0084CFBA /* NextPrevDisplayCalculation.swift in Sources */,
+				65E770CB2ABF4DAD0037D593 /* ShortcutManager.swift in Sources */,
 				654B2BC52AAB04AA0084CFBA /* EventMonitor.swift in Sources */,
 				654B2B412AAB03B00084CFBA /* WindowManager.swift in Sources */,
 				654B2BCD2AAB04AA0084CFBA /* MaximizeCalculation.swift in Sources */,
@@ -908,6 +920,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dan-koller/MASShortcut";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65E770CD2AC16D070037D593 /* MASShortcut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 654B2AD52AAB02FD0084CFBA /* Project object */;
 }
