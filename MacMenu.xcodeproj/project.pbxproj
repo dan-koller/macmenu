@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6533CD1F2AD402B1009263A7 /* SISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6533CD1E2AD402B1009263A7 /* SISwift */; };
 		654B2AE52AAB03110084CFBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654B2AE42AAB03110084CFBA /* Assets.xcassets */; };
 		654B2AF32AAB03110084CFBA /* MacMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2AF22AAB03110084CFBA /* MacMenuTests.swift */; };
 		654B2AFD2AAB03110084CFBA /* MacMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2AFC2AAB03110084CFBA /* MacMenuUITests.swift */; };
@@ -80,8 +81,6 @@
 		654B2C0F2AAB04AA0084CFBA /* CompoundSnapArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB62AAB04AA0084CFBA /* CompoundSnapArea.swift */; };
 		654B2C102AAB04AA0084CFBA /* FourthsCompoundCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */; };
 		654B2C112AAB04AA0084CFBA /* SnappingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */; };
-		654B2C152AB05F7A0084CFBA /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2C142AB05F7A0084CFBA /* SystemInfo.swift */; };
-		654B2C182AB05F8B0084CFBA /* SystemInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 654B2C172AB05F8B0084CFBA /* SystemInfo.c */; };
 		65E770CB2ABF4DAD0037D593 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */; };
 		65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 65E770CD2AC16D070037D593 /* MASShortcut */; };
 /* End PBXBuildFile section */
@@ -182,9 +181,6 @@
 		654B2BB62AAB04AA0084CFBA /* CompoundSnapArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundSnapArea.swift; sourceTree = "<group>"; };
 		654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthsCompoundCalculation.swift; sourceTree = "<group>"; };
 		654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingManager.swift; sourceTree = "<group>"; };
-		654B2C142AB05F7A0084CFBA /* SystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
-		654B2C162AB05F8B0084CFBA /* SystemInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemInfo.h; sourceTree = "<group>"; };
-		654B2C172AB05F8B0084CFBA /* SystemInfo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SystemInfo.c; sourceTree = "<group>"; };
 		65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6533CD1F2AD402B1009263A7 /* SISwift in Frameworks */,
 				65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +234,6 @@
 		654B2ADF2AAB02FE0084CFBA /* MacMenu */ = {
 			isa = PBXGroup;
 			children = (
-				654B2C132AB05F670084CFBA /* SystemInfo */,
 				654B2C122AB052B30084CFBA /* WindowManager */,
 				654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */,
 				654B2B332AAB03AF0084CFBA /* main.swift */,
@@ -388,16 +384,6 @@
 			path = WindowManager;
 			sourceTree = "<group>";
 		};
-		654B2C132AB05F670084CFBA /* SystemInfo */ = {
-			isa = PBXGroup;
-			children = (
-				654B2C142AB05F7A0084CFBA /* SystemInfo.swift */,
-				654B2C162AB05F8B0084CFBA /* SystemInfo.h */,
-				654B2C172AB05F8B0084CFBA /* SystemInfo.c */,
-			);
-			path = SystemInfo;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,6 +402,7 @@
 			name = MacMenu;
 			packageProductDependencies = (
 				65E770CD2AC16D070037D593 /* MASShortcut */,
+				6533CD1E2AD402B1009263A7 /* SISwift */,
 			);
 			productName = MacMenu;
 			productReference = 654B2ADD2AAB02FE0084CFBA /* MacMenu.app */;
@@ -492,6 +479,7 @@
 			mainGroup = 654B2AD42AAB02FD0084CFBA;
 			packageReferences = (
 				65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+				6533CD1D2AD402B1009263A7 /* XCRemoteSwiftPackageReference "SISwift" */,
 			);
 			productRefGroup = 654B2ADE2AAB02FE0084CFBA /* Products */;
 			projectDirPath = "";
@@ -572,7 +560,6 @@
 				654B2BBA2AAB04AA0084CFBA /* CGExtension.swift in Sources */,
 				654B2C0C2AAB04AA0084CFBA /* ThirdsCompoundCalculation.swift in Sources */,
 				654B2B502AAB04920084CFBA /* ReverseAllManager.swift in Sources */,
-				654B2C152AB05F7A0084CFBA /* SystemInfo.swift in Sources */,
 				654B2BC12AAB04AA0084CFBA /* AXExtension.swift in Sources */,
 				654B2B492AAB03B00084CFBA /* WindowHistory.swift in Sources */,
 				654B2BC22AAB04AA0084CFBA /* SequenceExtension.swift in Sources */,
@@ -584,7 +571,6 @@
 				654B2BC62AAB04AA0084CFBA /* StageUtil.swift in Sources */,
 				654B2BBC2AAB04AA0084CFBA /* AlertUtil.swift in Sources */,
 				654B2BF92AAB04AA0084CFBA /* FirstTwoThirdsCalculation.swift in Sources */,
-				654B2C182AB05F8B0084CFBA /* SystemInfo.c in Sources */,
 				654B2C102AAB04AA0084CFBA /* FourthsCompoundCalculation.swift in Sources */,
 				654B2C0B2AAB04AA0084CFBA /* FootprintWindow.swift in Sources */,
 				654B2BE22AAB04AA0084CFBA /* LowerLeftCalculation.swift in Sources */,
@@ -922,6 +908,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6533CD1D2AD402B1009263A7 /* XCRemoteSwiftPackageReference "SISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dan-koller/SISwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dan-koller/MASShortcut";
@@ -933,6 +927,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6533CD1E2AD402B1009263A7 /* SISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6533CD1D2AD402B1009263A7 /* XCRemoteSwiftPackageReference "SISwift" */;
+			productName = SISwift;
+		};
 		65E770CD2AC16D070037D593 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */;

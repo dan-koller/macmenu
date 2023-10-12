@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import SISwift
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
@@ -46,6 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Request permissions and start the wm
         requestAccessibilityPermissions()
         initializeWindowManager()
+        
+        // TODO: Show a small welcome window that displays the shortcuts
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -150,17 +153,15 @@ class SystemInfoViewModel: ObservableObject {
     @Published var ramUsage: Float = 0.0
     @Published var diskUsage: Float = 0.0
     
-    private let systemInfo = SystemInfo()
-    
     init() {
         // Initialize data
         updateData()
     }
     
     func updateData() {
-        cpuLoad = systemInfo.DEBUG_CPU_LOAD()
-        ramUsage = systemInfo.DEBUG_MEMORY_USAGE()
-        diskUsage = systemInfo.getDisk()
+        cpuLoad = SISystemInfo.getCpuLoad()
+        ramUsage = SISystemInfo.getMemoryUsage()
+        diskUsage = SISystemInfo.getDiskUsage()
     }
     
     func startUpdatingData() {
