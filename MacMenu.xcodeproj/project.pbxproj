@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650821B42ADFD3220009B168 /* SystemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650821B32ADFD3220009B168 /* SystemInfoView.swift */; };
+		650821B62ADFD3630009B168 /* CleaningModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650821B52ADFD3630009B168 /* CleaningModeView.swift */; };
+		650821B82ADFD3860009B168 /* WindowManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650821B72ADFD3860009B168 /* WindowManagerView.swift */; };
+		650821BA2ADFD3AB0009B168 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650821B92ADFD3AB0009B168 /* PopoverView.swift */; };
 		6533CD1F2AD402B1009263A7 /* SISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6533CD1E2AD402B1009263A7 /* SISwift */; };
 		654B2AE52AAB03110084CFBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654B2AE42AAB03110084CFBA /* Assets.xcassets */; };
 		654B2AF32AAB03110084CFBA /* MacMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2AF22AAB03110084CFBA /* MacMenuTests.swift */; };
@@ -103,6 +107,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650821B32ADFD3220009B168 /* SystemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoView.swift; sourceTree = "<group>"; };
+		650821B52ADFD3630009B168 /* CleaningModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleaningModeView.swift; sourceTree = "<group>"; };
+		650821B72ADFD3860009B168 /* WindowManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManagerView.swift; sourceTree = "<group>"; };
+		650821B92ADFD3AB0009B168 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		654B2ADD2AAB02FE0084CFBA /* MacMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654B2AE42AAB03110084CFBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654B2AE92AAB03110084CFBA /* MacMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacMenu.entitlements; sourceTree = "<group>"; };
@@ -211,6 +219,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650821B22ADFD2F60009B168 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				650821B32ADFD3220009B168 /* SystemInfoView.swift */,
+				650821B52ADFD3630009B168 /* CleaningModeView.swift */,
+				650821B72ADFD3860009B168 /* WindowManagerView.swift */,
+				650821B92ADFD3AB0009B168 /* PopoverView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		654B2AD42AAB02FD0084CFBA = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +253,7 @@
 		654B2ADF2AAB02FE0084CFBA /* MacMenu */ = {
 			isa = PBXGroup;
 			children = (
+				650821B22ADFD2F60009B168 /* Views */,
 				654B2C122AB052B30084CFBA /* WindowManager */,
 				654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */,
 				654B2B332AAB03AF0084CFBA /* main.swift */,
@@ -536,6 +556,7 @@
 				654B2BEC2AAB04AA0084CFBA /* LeftRightHalfCalculation.swift in Sources */,
 				654B2C012AAB04AA0084CFBA /* LastTwoThirdsCalculation.swift in Sources */,
 				654B2BC32AAB04AA0084CFBA /* Debounce.swift in Sources */,
+				650821BA2ADFD3AB0009B168 /* PopoverView.swift in Sources */,
 				654B2C002AAB04AA0084CFBA /* OrientationAware.swift in Sources */,
 				654B2BDE2AAB04AA0084CFBA /* MaximizeHeightCalculation.swift in Sources */,
 				654B2B5A2AAB049C0084CFBA /* StandardWindowMover.swift in Sources */,
@@ -547,14 +568,17 @@
 				654B2BC02AAB04AA0084CFBA /* DispatchTimeExtension.swift in Sources */,
 				654B2B442AAB03B00084CFBA /* WindowAction.swift in Sources */,
 				654B2BBF2AAB04AA0084CFBA /* TimeoutCache.swift in Sources */,
+				650821B82ADFD3860009B168 /* WindowManagerView.swift in Sources */,
 				654B2BDA2AAB04AA0084CFBA /* TopHalfCalculation.swift in Sources */,
 				654B2B592AAB049C0084CFBA /* BestEffortWindowMover.swift in Sources */,
 				654B2BC92AAB04AA0084CFBA /* BottomHalfCalculation.swift in Sources */,
 				654B2C0F2AAB04AA0084CFBA /* CompoundSnapArea.swift in Sources */,
+				650821B42ADFD3220009B168 /* SystemInfoView.swift in Sources */,
 				654B2BC72AAB04AA0084CFBA /* CUtil.swift in Sources */,
 				654B2C0D2AAB04AA0084CFBA /* HalvesCompoundCalculation.swift in Sources */,
 				654B2BBB2AAB04AA0084CFBA /* RunLoopThread.swift in Sources */,
 				654B2BCC2AAB04AA0084CFBA /* UpperRightCalculation.swift in Sources */,
+				650821B62ADFD3630009B168 /* CleaningModeView.swift in Sources */,
 				654B2C042AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift in Sources */,
 				654B2BDC2AAB04AA0084CFBA /* CenterHalfCalculation.swift in Sources */,
 				654B2BBA2AAB04AA0084CFBA /* CGExtension.swift in Sources */,
