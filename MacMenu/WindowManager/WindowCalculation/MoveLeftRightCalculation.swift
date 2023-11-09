@@ -12,7 +12,7 @@ import Cocoa
 // Defaults.centeredDirectionalMove.enabled
 // Defaults.resizeOnDirectionalMove.enabled (resizes in thirds, or just to half-width if traversesDisplays is enabled
 
-class MoveLeftRightCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
+class MoveLeftRightCalculation: WindowCalculation, RepeatedExecutionsCalculation {
     
     override func calculate(_ params: WindowCalculationParameters) -> WindowCalculationResult? {
         
@@ -22,7 +22,7 @@ class MoveLeftRightCalculation: WindowCalculation, RepeatedExecutionsInThirdsCal
         let canTraverseDisplays = Constants.subsequentExecutionMode.traversesDisplays && params.usableScreens.numScreens > 1
         
         let rectResult: RectResult
-        if canTraverseDisplays && isRepeatedCommand(params) {
+        if canTraverseDisplays {
             if action == .moveLeft {
                 if let prevScreen = params.usableScreens.adjacentScreens?.prev {
                     screen = prevScreen
@@ -53,13 +53,15 @@ class MoveLeftRightCalculation: WindowCalculation, RepeatedExecutionsInThirdsCal
         let visibleFrameOfScreen = params.visibleFrameOfScreen
         
         var calculatedWindowRect: CGRect
-        if newDisplay && Constants.resizeOnDirectionalMove.enabled {
-            calculatedWindowRect = calculateFirstRect(params).rect
-        } else if Constants.resizeOnDirectionalMove.enabled {
-            calculatedWindowRect = calculateRepeatedRect(params).rect
-        } else {
-            calculatedWindowRect = calculateGenericRect(params).rect
-        }
+//        if newDisplay && Constants.resizeOnDirectionalMove.enabled {
+//            calculatedWindowRect = calculateFirstRect(params).rect
+//        } else if Constants.resizeOnDirectionalMove.enabled {
+//            calculatedWindowRect = calculateFirstRect(params).rect
+//        } else {
+//            calculatedWindowRect = calculateGenericRect(params).rect
+//        }
+        
+        calculatedWindowRect = calculateGenericRect(params).rect
         
         if Constants.centeredDirectionalMove.enabled != false {
             calculatedWindowRect.origin.y = round((visibleFrameOfScreen.height - calculatedWindowRect.height) / 2.0) + visibleFrameOfScreen.minY

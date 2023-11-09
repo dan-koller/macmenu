@@ -7,19 +7,15 @@
 
 import Foundation
 
-class MoveUpDownCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
+class MoveUpDownCalculation: WindowCalculation, RepeatedExecutionsCalculation {
     
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
         
         let visibleFrameOfScreen = params.visibleFrameOfScreen
         
         var calculatedWindowRect: CGRect
-        
-        if Constants.resizeOnDirectionalMove.enabled {
-            calculatedWindowRect = calculateRepeatedRect(params).rect
-        } else {
-            calculatedWindowRect = calculateGenericRect(params).rect
-        }
+
+        calculatedWindowRect = calculateGenericRect(params).rect
         
         if Constants.centeredDirectionalMove.enabled != false {
             calculatedWindowRect.origin.x = round((visibleFrameOfScreen.width - calculatedWindowRect.width) / 2.0) + visibleFrameOfScreen.minX

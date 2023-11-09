@@ -21,17 +21,14 @@ class ShortcutManager {
 
         bindShortcuts()
         
-        subscribeAll(selector: #selector(windowActionTriggered))
-        
+        // subscribe
         Notification.Name.changeDefaults.onPost { _ in self.registerDefaults() }
     }
     
-    public func reloadFromDefaults() {
+    deinit {
+        // unsubscribe
+//        NotificationCenter.default.removeObserver(self)
         unsubscribe()
-        unbindShortcuts()
-        registerDefaults()
-        bindShortcuts()
-        subscribeAll(selector: #selector(windowActionTriggered))
     }
     
     public func bindShortcuts() {
@@ -46,17 +43,12 @@ class ShortcutManager {
         }
     }
     
-    public func getKeyEquivalent(action: WindowAction) -> (String?, NSEvent.ModifierFlags)? {
-        guard let masShortcut = MASShortcutBinder.shared()?.value(forKey: action.name) as? MASShortcut else { return nil }
-        return (masShortcut.keyCodeStringForKeyEquivalent, masShortcut.modifierFlags)
-    }
-    
-    deinit {
-        unsubscribe()
-    }
+//    public func getKeyEquivalent(action: WindowAction) -> (String?, NSEvent.ModifierFlags)? {
+//        guard let masShortcut = MASShortcutBinder.shared()?.value(forKey: action.name) as? MASShortcut else { return nil }
+//        return (masShortcut.keyCodeStringForKeyEquivalent, masShortcut.modifierFlags)
+//    }
     
     private func registerDefaults() {
-        
         let defaultShortcuts = WindowAction.active.reduce(into: [String: MASShortcut]()) { dict, windowAction in
             guard let defaultShortcut = windowAction.defaultShortcuts
             else { return }
@@ -68,39 +60,43 @@ class ShortcutManager {
     }
     
     @objc func windowActionTriggered(notification: NSNotification) {
-        guard var parameters = notification.object as? ExecutionParameters else { return }
-        
-        if MultiWindowManager.execute(parameters: parameters) {
-            return
-        }
-        
+        guard let parameters = notification.object as? ExecutionParameters else { return }
         windowManager.execute(parameters)
-    }
-    
-    private func isRepeatAction(parameters: ExecutionParameters, windowElement: AccessibilityElement, windowId: CGWindowID) -> Bool {
-        
-        if parameters.action == .maximize {
-            if ScreenDetection().detectScreens(using: windowElement)?.currentScreen.visibleFrame.size == windowElement.frame.size {
-                return true
-            }
-        }
-        if parameters.action == AppDelegate.windowHistory.lastRectangleActions[windowId]?.action {
-            return true
-        }
-        return false
-    }
-    
-    private func subscribe(notification: WindowAction, selector: Selector) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: notification.notificationName, object: nil)
     }
     
     private func unsubscribe() {
         NotificationCenter.default.removeObserver(self)
     }
     
+    private func subscribe(notification: WindowAction, selector: Selector) {
+        NotificationCenter.default.addObserver(self, selector: selector, name: notification.notificationName, object: nil)
+    }
+    
     private func subscribeAll(selector: Selector) {
         for windowAction in WindowAction.active {
             subscribe(notification: windowAction, selector: selector)
+        }
+    }
+    
+    public func disableShortcuts() {
+        unsubscribe()
+        unbindShortcuts()
+    }
+    
+    public func reloadShortcuts() {
+        unsubscribe()
+        unbindShortcuts()
+        registerDefaults()
+        bindShortcuts()
+        subscribeAll(selector: #selector(windowActionTriggered))
+    }
+    
+    /// Used directly in the toggle switch of the WindowManagerView in the AppDelegate
+    func toggleListening(_ isListening: Bool) {
+        if isListening {
+            reloadShortcuts()
+        } else {
+            disableShortcuts()
         }
     }
 }

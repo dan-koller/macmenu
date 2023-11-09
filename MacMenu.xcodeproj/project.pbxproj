@@ -54,23 +54,18 @@
 		654B2BCD2AAB04AA0084CFBA /* MaximizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */; };
 		654B2BCF2AAB04AA0084CFBA /* WindowCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B742AAB04A90084CFBA /* WindowCalculation.swift */; };
 		654B2BD02AAB04AA0084CFBA /* MoveLeftRightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */; };
-		654B2BD12AAB04AA0084CFBA /* SpecifiedCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */; };
-		654B2BD52AAB04AA0084CFBA /* RepeatedExecutionsInThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */; };
 		654B2BD62AAB04AA0084CFBA /* ChangeSizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */; };
 		654B2BD92AAB04AA0084CFBA /* CenterCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */; };
 		654B2BDA2AAB04AA0084CFBA /* TopHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */; };
 		654B2BDB2AAB04AA0084CFBA /* GapCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B802AAB04A90084CFBA /* GapCalculation.swift */; };
 		654B2BDC2AAB04AA0084CFBA /* CenterHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */; };
 		654B2BDE2AAB04AA0084CFBA /* MaximizeHeightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */; };
-		654B2BDF2AAB04AA0084CFBA /* AlmostMaximizeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */; };
 		654B2BE02AAB04AA0084CFBA /* LastThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */; };
 		654B2BE22AAB04AA0084CFBA /* LowerLeftCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */; };
 		654B2BE82AAB04AA0084CFBA /* UpperLeftCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */; };
 		654B2BEC2AAB04AA0084CFBA /* LeftRightHalfCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */; };
 		654B2BEE2AAB04AA0084CFBA /* LowerRightCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */; };
-		654B2BF82AAB04AA0084CFBA /* BottomCenterSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */; };
 		654B2BF92AAB04AA0084CFBA /* FirstTwoThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */; };
-		654B2BFC2AAB04AA0084CFBA /* TopCenterSixthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */; };
 		654B2BFE2AAB04AA0084CFBA /* FirstThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */; };
 		654B2BFF2AAB04AA0084CFBA /* CenterThirdCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA42AAB04A90084CFBA /* CenterThirdCalculation.swift */; };
 		654B2C002AAB04AA0084CFBA /* OrientationAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BA52AAB04A90084CFBA /* OrientationAware.swift */; };
@@ -85,6 +80,8 @@
 		654B2C0F2AAB04AA0084CFBA /* CompoundSnapArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB62AAB04AA0084CFBA /* CompoundSnapArea.swift */; };
 		654B2C102AAB04AA0084CFBA /* FourthsCompoundCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */; };
 		654B2C112AAB04AA0084CFBA /* SnappingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */; };
+		6583AA8A2AE8F60F0076E070 /* EventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583AA892AE8F60F0076E070 /* EventTap.swift */; };
+		6583AA8C2AE8F6860076E070 /* CleaningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583AA8B2AE8F6860076E070 /* CleaningManager.swift */; };
 		65E770CB2ABF4DAD0037D593 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */; };
 		65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 65E770CD2AC16D070037D593 /* MASShortcut */; };
 /* End PBXBuildFile section */
@@ -158,23 +155,18 @@
 		654B2B722AAB04A90084CFBA /* MaximizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaximizeCalculation.swift; sourceTree = "<group>"; };
 		654B2B742AAB04A90084CFBA /* WindowCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowCalculation.swift; sourceTree = "<group>"; };
 		654B2B752AAB04A90084CFBA /* MoveLeftRightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveLeftRightCalculation.swift; sourceTree = "<group>"; };
-		654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecifiedCalculation.swift; sourceTree = "<group>"; };
-		654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatedExecutionsInThirdsCalculation.swift; sourceTree = "<group>"; };
 		654B2B7B2AAB04A90084CFBA /* ChangeSizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSizeCalculation.swift; sourceTree = "<group>"; };
 		654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCalculation.swift; sourceTree = "<group>"; };
 		654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopHalfCalculation.swift; sourceTree = "<group>"; };
 		654B2B802AAB04A90084CFBA /* GapCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GapCalculation.swift; sourceTree = "<group>"; };
 		654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterHalfCalculation.swift; sourceTree = "<group>"; };
 		654B2B832AAB04A90084CFBA /* MaximizeHeightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaximizeHeightCalculation.swift; sourceTree = "<group>"; };
-		654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlmostMaximizeCalculation.swift; sourceTree = "<group>"; };
 		654B2B852AAB04A90084CFBA /* LastThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2B872AAB04A90084CFBA /* LowerLeftCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowerLeftCalculation.swift; sourceTree = "<group>"; };
 		654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpperLeftCalculation.swift; sourceTree = "<group>"; };
 		654B2B912AAB04A90084CFBA /* LeftRightHalfCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftRightHalfCalculation.swift; sourceTree = "<group>"; };
 		654B2B932AAB04A90084CFBA /* LowerRightCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowerRightCalculation.swift; sourceTree = "<group>"; };
-		654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCenterSixthCalculation.swift; sourceTree = "<group>"; };
 		654B2B9E2AAB04A90084CFBA /* FirstTwoThirdsCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTwoThirdsCalculation.swift; sourceTree = "<group>"; };
-		654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCenterSixthCalculation.swift; sourceTree = "<group>"; };
 		654B2BA32AAB04A90084CFBA /* FirstThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BA42AAB04A90084CFBA /* CenterThirdCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterThirdCalculation.swift; sourceTree = "<group>"; };
 		654B2BA52AAB04A90084CFBA /* OrientationAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationAware.swift; sourceTree = "<group>"; };
@@ -189,6 +181,8 @@
 		654B2BB62AAB04AA0084CFBA /* CompoundSnapArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundSnapArea.swift; sourceTree = "<group>"; };
 		654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthsCompoundCalculation.swift; sourceTree = "<group>"; };
 		654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingManager.swift; sourceTree = "<group>"; };
+		6583AA892AE8F60F0076E070 /* EventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTap.swift; sourceTree = "<group>"; };
+		6583AA8B2AE8F6860076E070 /* CleaningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleaningManager.swift; sourceTree = "<group>"; };
 		65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +247,7 @@
 		654B2ADF2AAB02FE0084CFBA /* MacMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6583AA882AE8F5FF0076E070 /* CleaningMode */,
 				650821B22ADFD2F60009B168 /* Views */,
 				654B2C122AB052B30084CFBA /* WindowManager */,
 				654B2B3C2AAB03B00084CFBA /* AppDelegate.swift */,
@@ -328,8 +323,6 @@
 		654B2B6C2AAB04A90084CFBA /* WindowCalculation */ = {
 			isa = PBXGroup;
 			children = (
-				654B2B842AAB04A90084CFBA /* AlmostMaximizeCalculation.swift */,
-				654B2B9D2AAB04A90084CFBA /* BottomCenterSixthCalculation.swift */,
 				654B2B6E2AAB04A90084CFBA /* BottomHalfCalculation.swift */,
 				654B2B7E2AAB04A90084CFBA /* CenterCalculation.swift */,
 				654B2B812AAB04A90084CFBA /* CenterHalfCalculation.swift */,
@@ -350,9 +343,6 @@
 				654B2B6D2AAB04A90084CFBA /* NextPrevDisplayCalculation.swift */,
 				654B2BA52AAB04A90084CFBA /* OrientationAware.swift */,
 				654B2BA92AAB04AA0084CFBA /* RepeatedExecutionsCalculation.swift */,
-				654B2B7A2AAB04A90084CFBA /* RepeatedExecutionsInThirdsCalculation.swift */,
-				654B2B762AAB04A90084CFBA /* SpecifiedCalculation.swift */,
-				654B2BA12AAB04A90084CFBA /* TopCenterSixthCalculation.swift */,
 				654B2B7F2AAB04A90084CFBA /* TopHalfCalculation.swift */,
 				654B2B8D2AAB04A90084CFBA /* UpperLeftCalculation.swift */,
 				654B2B712AAB04A90084CFBA /* UpperRightCalculation.swift */,
@@ -402,6 +392,15 @@
 				654B2B342AAB03AF0084CFBA /* WindowManager.swift */,
 			);
 			path = WindowManager;
+			sourceTree = "<group>";
+		};
+		6583AA882AE8F5FF0076E070 /* CleaningMode */ = {
+			isa = PBXGroup;
+			children = (
+				6583AA892AE8F60F0076E070 /* EventTap.swift */,
+				6583AA8B2AE8F6860076E070 /* CleaningManager.swift */,
+			);
+			path = CleaningMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,9 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654B2BF82AAB04AA0084CFBA /* BottomCenterSixthCalculation.swift in Sources */,
 				654B2B5B2AAB049C0084CFBA /* QuantizedWindowMover.swift in Sources */,
-				654B2BDF2AAB04AA0084CFBA /* AlmostMaximizeCalculation.swift in Sources */,
 				654B2BD02AAB04AA0084CFBA /* MoveLeftRightCalculation.swift in Sources */,
 				654B2BDB2AAB04AA0084CFBA /* GapCalculation.swift in Sources */,
 				654B2B482AAB03B00084CFBA /* AppDelegate.swift in Sources */,
@@ -554,13 +551,13 @@
 				654B2BBD2AAB04AA0084CFBA /* CFExtension.swift in Sources */,
 				654B2BCF2AAB04AA0084CFBA /* WindowCalculation.swift in Sources */,
 				654B2BEC2AAB04AA0084CFBA /* LeftRightHalfCalculation.swift in Sources */,
+				6583AA8C2AE8F6860076E070 /* CleaningManager.swift in Sources */,
 				654B2C012AAB04AA0084CFBA /* LastTwoThirdsCalculation.swift in Sources */,
 				654B2BC32AAB04AA0084CFBA /* Debounce.swift in Sources */,
 				650821BA2ADFD3AB0009B168 /* PopoverView.swift in Sources */,
 				654B2C002AAB04AA0084CFBA /* OrientationAware.swift in Sources */,
 				654B2BDE2AAB04AA0084CFBA /* MaximizeHeightCalculation.swift in Sources */,
 				654B2B5A2AAB049C0084CFBA /* StandardWindowMover.swift in Sources */,
-				654B2BFC2AAB04AA0084CFBA /* TopCenterSixthCalculation.swift in Sources */,
 				654B2BBE2AAB04AA0084CFBA /* NotificationExtension.swift in Sources */,
 				654B2BE02AAB04AA0084CFBA /* LastThirdCalculation.swift in Sources */,
 				654B2BC42AAB04AA0084CFBA /* NSImageExtension.swift in Sources */,
@@ -609,8 +606,7 @@
 				654B2B422AAB03B00084CFBA /* WindowActionCategory.swift in Sources */,
 				654B2B472AAB03B00084CFBA /* Constants.swift in Sources */,
 				654B2B3F2AAB03B00084CFBA /* ScreenDetection.swift in Sources */,
-				654B2BD52AAB04AA0084CFBA /* RepeatedExecutionsInThirdsCalculation.swift in Sources */,
-				654B2BD12AAB04AA0084CFBA /* SpecifiedCalculation.swift in Sources */,
+				6583AA8A2AE8F60F0076E070 /* EventTap.swift in Sources */,
 				654B2BEE2AAB04AA0084CFBA /* LowerRightCalculation.swift in Sources */,
 				654B2BB92AAB04AA0084CFBA /* WindowUtil.swift in Sources */,
 				654B2C0A2AAB04AA0084CFBA /* SnapAreaModel.swift in Sources */,

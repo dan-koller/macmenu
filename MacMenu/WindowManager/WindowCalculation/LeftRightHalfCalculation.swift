@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class LeftRightHalfCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
+class LeftRightHalfCalculation: WindowCalculation, RepeatedExecutionsCalculation {
     
     override func calculate(_ params: WindowCalculationParameters) -> WindowCalculationResult? {
         
@@ -24,11 +24,11 @@ class LeftRightHalfCalculation: WindowCalculation, RepeatedExecutionsInThirdsCal
             return nil
         case .resize:
             let screen = usableScreens.currentScreen
-            let rectResult: RectResult = calculateRepeatedRect(params.asRectParams())
+            let rectResult: RectResult = calculateFullRect(params.asRectParams())
             return WindowCalculationResult(rect: rectResult.rect, screen: screen, resultingAction: params.action)
         case .none, .cycleMonitor:
             let screen = usableScreens.currentScreen
-            let oneHalfRect = calculateFirstRect(params.asRectParams())
+            let oneHalfRect = calculateFullRect(params.asRectParams())
             return WindowCalculationResult(rect: oneHalfRect.rect, screen: screen, resultingAction: params.action)
         }
         
@@ -48,27 +48,13 @@ class LeftRightHalfCalculation: WindowCalculation, RepeatedExecutionsInThirdsCal
     }
 
     func calculateLeftAcrossDisplays(_ params: WindowCalculationParameters, screen: NSScreen) -> WindowCalculationResult? {
-                
-        if isRepeatedCommand(params) {
-            if let prevScreen = params.usableScreens.adjacentScreens?.prev {
-                return calculateRightAcrossDisplays(params.withDifferentAction(.rightHalf), screen: prevScreen)
-            }
-        }
-        
-        let oneHalfRect = calculateFirstRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .leftHalf))
+        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .leftHalf))
         return WindowCalculationResult(rect: oneHalfRect.rect, screen: screen, resultingAction: .leftHalf)
     }
     
     
     func calculateRightAcrossDisplays(_ params: WindowCalculationParameters, screen: NSScreen) -> WindowCalculationResult? {
-        
-        if isRepeatedCommand(params) {
-            if let nextScreen = params.usableScreens.adjacentScreens?.next {
-                return calculateLeftAcrossDisplays(params.withDifferentAction(.leftHalf), screen: nextScreen)
-            }
-        }
-        
-        let oneHalfRect = calculateFirstRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .rightHalf))
+        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .rightHalf))
         return WindowCalculationResult(rect: oneHalfRect.rect, screen: screen, resultingAction: .rightHalf)
     }
 

@@ -9,35 +9,18 @@ import Foundation
 
 protocol RepeatedExecutionsCalculation {
     
-    func calculateFirstRect(_ params: RectCalculationParameters) -> RectResult
+    // Default rect, calculated in extension
+    func calculateFullRect(_ params: RectCalculationParameters) -> RectResult
     
-    func calculateSecondRect(_ params: RectCalculationParameters) -> RectResult
-
-    func calculateThirdRect(_ params: RectCalculationParameters) -> RectResult
+    // Fractional rect, calculated in classes that implement this protocol
+    func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult
 
 }
 
 extension RepeatedExecutionsCalculation {
     
-    func calculateRepeatedRect(_ params: RectCalculationParameters) -> RectResult {
-        
-        guard let count = params.lastAction?.count,
-              params.lastAction?.action == params.action
-        else {
-            return calculateFirstRect(params)
-        }
-                
-        let position = count % 3
-        
-        switch (position) {
-        case 1:
-            return calculateSecondRect(params)
-        case 2:
-            return calculateThirdRect(params)
-        default:
-            return calculateFirstRect(params)
-        }
-        
+    func calculateFullRect(_ params: RectCalculationParameters) -> RectResult {
+        return calculateFractionalRect(params, fraction: 1 / 2.0)
     }
     
 }

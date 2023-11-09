@@ -1,5 +1,5 @@
 //
-//  AlmostMaximizeCalculation.swift
+//  CenterHalfCalculation.swift
 //  MacMenu, Ported from Rectangle
 //
 //  Created by Daniel Koller on 31.08.23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CenterHalfCalculation: WindowCalculation, OrientationAware, RepeatedExecutionsInThirdsCalculation {
+class CenterHalfCalculation: WindowCalculation, OrientationAware, RepeatedExecutionsCalculation {
     
     func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult {
         
@@ -18,11 +18,6 @@ class CenterHalfCalculation: WindowCalculation, OrientationAware, RepeatedExecut
     }
     
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
-        
-        if (params.lastAction != nil && Constants.subsequentExecutionMode.resizes) || Constants.centerHalfCycles.userEnabled {
-            return calculateRepeatedRect(params)
-        }
-        
         return orientationBasedRect(params.visibleFrameOfScreen)
     }
     

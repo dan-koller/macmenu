@@ -11,6 +11,7 @@ struct CleaningModeView: View {
     @State private var isCleaningEnabled = false
 
     var body: some View {
+        let appDelegate = NSApp.delegate as! AppDelegate
         HStack {
             Text("Cleaning mode")
                 .font(.headline)
@@ -19,9 +20,8 @@ struct CleaningModeView: View {
             
             Toggle("", isOn: $isCleaningEnabled)
                 .toggleStyle(SwitchToggleStyle())
-            // Event listener for changes
-                .onChange(of: isCleaningEnabled) { newValue in
-                    print("Cleaning mode Enabled: \(newValue)")
+                .onChange(of: isCleaningEnabled) { listening in
+                    appDelegate.toggleCleaningMode(listening)
                 }
         }
         .padding(5)

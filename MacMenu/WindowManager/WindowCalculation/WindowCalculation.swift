@@ -40,15 +40,6 @@ class WindowCalculation: Calculation {
     func rectFitsWithinRect(rect1: CGRect, rect2: CGRect) -> Bool {
         (rect1.width <= rect2.width) && (rect1.height <= rect2.height)
     }
-    
-    func isRepeatedCommand(_ params: WindowCalculationParameters) -> Bool {
-        if let lastAction = params.lastAction, lastAction.action == params.action {
-            let normalizedLastRect = lastAction.rect.screenFlipped
-            return normalizedLastRect == params.window.rect
-        }
-        return false
-    }
-    
 }
 
 struct Window {

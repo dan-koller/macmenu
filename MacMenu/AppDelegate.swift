@@ -7,7 +7,6 @@
 
 import Cocoa
 import SwiftUI
-import SISwift
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
@@ -19,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var windowManager: WindowManager!
     private var snappingManager: SnappingManager!
     private var shortcutManager: ShortcutManager!
+    
+    private var cleaningManager: CleaningManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let systemInfoView = SystemInfoView()
@@ -60,9 +61,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
-    // Disable xcode sandbox when developing to get an accessibilty prompt when developing
+
+    // Disable xcode sandbox when developing to get an accessibilty prompt
     func requestAccessibilityPermissions() {
+        // TODO: Wait for the user to grant permission
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
         
         let trusted = AXIsProcessTrustedWithOptions(options)
@@ -77,10 +79,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.windowManager = WindowManager()
         self.snappingManager = SnappingManager()
         self.shortcutManager = ShortcutManager(windowManager: windowManager)
+        
+        self.cleaningManager = CleaningManager(appDelegate: self)
     }
 
     func toggleWindowManager(_ isListening: Bool) {
         snappingManager.toggleListening(isListening)
+        shortcutManager.toggleListening(isListening)
+    }
+    
+    func toggleCleaningMode(_ isListening: Bool) {
+        cleaningManager.toggleCleaning(isListening)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

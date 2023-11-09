@@ -7,15 +7,10 @@
 
 import Foundation
 
-class UpperLeftCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
+class UpperLeftCalculation: WindowCalculation, RepeatedExecutionsCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
-
-        if params.lastAction == nil || !Constants.subsequentExecutionMode.resizes {
-            return calculateFirstRect(params)
-        }
-        
-        return calculateRepeatedRect(params)
+        return calculateFullRect(params)
     }
     
     func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult {

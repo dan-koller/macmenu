@@ -10,10 +10,6 @@ import SwiftUI
 struct WindowManagerView: View {
     @State private var isWindowManagerEnabled = true
 
-    init() {
-        print("Initializing WindowManagerView...")
-    }
-
     var body: some View {
         let appDelegate = NSApp.delegate as! AppDelegate
         HStack {
