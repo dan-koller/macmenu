@@ -18,7 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var windowManager: WindowManager!
     private var snappingManager: SnappingManager!
     private var shortcutManager: ShortcutManager!
-    
     private var cleaningManager: CleaningManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -79,8 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.windowManager = WindowManager()
         self.snappingManager = SnappingManager()
         self.shortcutManager = ShortcutManager(windowManager: windowManager)
-        
-        self.cleaningManager = CleaningManager(appDelegate: self)
+        self.cleaningManager = CleaningManager()
     }
 
     func toggleWindowManager(_ isListening: Bool) {

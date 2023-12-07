@@ -5,81 +5,66 @@
 //  Created by Daniel Koller on 25.10.23.
 //
 
+import Carbon
 import Foundation
-import SwiftUI
 
-enum EventTapResult {
-    case pass
-    case block
-}
+class EventTap {
+    var eventTapEnabled = false
+    var eventTap: CFMachPort?
 
-typealias Callback = (_ type: CGEventType) -> EventTapResult
+    // Toggle the eventTap on and off
+    func toggleEventTap() {
+        eventTapEnabled = !eventTapEnabled
 
-private let timerInterval = 15.0
-private var lastEventTime: Double = 0
-private var eventTap: CFMachPort?
-private var callbacks: [Callback] = []
-private var isSetup = false
-private let eventMask = 1 << CGEventType.keyDown.rawValue
-    | 1 << CGEventType.keyUp.rawValue
-    | 1 << CGEventType.mouseMoved.rawValue
-    | 1 << CGEventType.leftMouseUp.rawValue
-    | 1 << CGEventType.leftMouseDown.rawValue
-    | 1 << CGEventType.leftMouseDragged.rawValue
-    | 1 << NX_SYSDEFINED;
-
-// Disable xcode sandbox when developing to get a accessibilty prompt
-func createInputTap(_ callback: @escaping Callback) -> Bool {
-    let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
-    let options = [checkOptPrompt: true]
-    let isAppTrusted = AXIsProcessTrustedWithOptions(options as CFDictionary?)
-
-    if !isAppTrusted {
-        return false
-    }
-
-    if !isSetup {
-        initEventTap()
-        Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) { timer in
-            initEventTap()
-        }
-        isSetup = true
-    }
-
-    callbacks.append(callback)
-    return true
-}
-
-func currentTime() -> TimeInterval {
-    NSDate().timeIntervalSince1970
-}
-
-func initEventTap() {
-    if lastEventTime > currentTime() - timerInterval {
-        return
-    }
-
-    if let eventTap = eventTap {
-        // Detach current event tap
-        CFMachPortInvalidate(eventTap)
-    }
-
-    eventTap = CGEvent.tapCreate(
-        tap: .cghidEventTap,
-        place: .headInsertEventTap,
-        options: .defaultTap,
-        eventsOfInterest: CGEventMask(eventMask),
-        callback: { (proxy, type, event, userData) -> Optional<Unmanaged<CGEvent>> in
-            lastEventTime = currentTime()
-            var shouldPass = true
-            for callback in callbacks {
-                shouldPass = callback(type) == .pass && shouldPass
+        if eventTapEnabled {
+            createTap()
+            print("Event Tap Enabled")
+        } else {
+            // Disable the event tap (back to normal)
+            if let tap = eventTap {
+                CGEvent.tapEnable(tap: tap, enable: false)
+                // No need to manually release eventTap in Swift
+                eventTap = nil
             }
-            return !shouldPass ? Optional.none : Optional.some(Unmanaged.passUnretained(event))
-        },
-        userInfo: nil
-    )
+            print("Event Tap Disabled")
+        }
+    }
 
-    let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0)
-    CFRunLoopAddSource(CFRunLoopGetMain(), runLoopSource, .commonModes)
+    func createTap() {
+        if eventTap == nil {
+            var runLoopSource: CFRunLoopSource?
+
+            eventTap = CGEvent.tapCreate(
+                tap: .cgSessionEventTap,
+                place: .headInsertEventTap,
+                options: .defaultTap,
+                eventsOfInterest: CGEventMask(1 << CGEventType.keyDown.rawValue),
+                callback: keyboardInputInterceptor,
+                userInfo: nil
+            )
+
+            if eventTap == nil {
+                print("Couldn't create event tap!")
+                exit(1)
+            }
+
+            runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap!, 0)
+            CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, .commonModes)
+            CGEvent.tapEnable(tap: eventTap!, enable: true)
+            // Note: No need to release runLoopSource or eventTap in Swift
+            CFRunLoopRun()
+        }
+    }
 }
+
+// Custom event callback to intercept keyboard input
+func keyboardInputInterceptor(proxy: CGEventTapProxy, type: CGEventType, event: CGEvent, refcon: UnsafeMutableRawPointer?) -> Unmanaged<CGEvent>? {
+    // If any key (not mouse) is pressed, print its keycode in the console
+    if type == .keyDown {
+        print(event.getIntegerValueField(.keyboardEventKeycode))
+        return nil
+    }
+    
+    return Unmanaged.passRetained(event)
+}
+

@@ -6,23 +6,39 @@
 //
 
 import Foundation
+import Carbon
 
 class CleaningManager {
+    private var eventTap: EventTap
     
-    let appDelegate: AppDelegate
+    init() {
+        self.eventTap = EventTap()
+    }
     
-    init(appDelegate: AppDelegate) {
-        self.appDelegate = appDelegate
+    // Additional flag to track cleaning mode
+    private var isCleaningMode = false
+    
+    // Function to set the cleaning mode flag
+    func setCleaningMode(active: Bool) {
+        isCleaningMode = active
+    }
+
+    // Function to check if cleaning mode is active
+    func isCleaningModeActive() -> Bool {
+        return isCleaningMode
     }
     
     /// Used directly in the toggle switch of the CleaningModeView in the AppDelegate
     func toggleCleaning(_ isListening: Bool) {
         if isListening {
-            print("Enabling cleaning mode...")
+            print("Enabling cleaning mode for 20 seconds...")
+            setCleaningMode(active: true)
+            eventTap.toggleEventTap()
         } else {
-            print("...disbaling cleaning mode")
+            print("Disabling cleaning mode...")
+            setCleaningMode(active: false)
+            eventTap.toggleEventTap()
         }
     }
-    
-    // TODO: Implement methods to enable and disable keyboard input, while cleaning mode is active
 }
+
