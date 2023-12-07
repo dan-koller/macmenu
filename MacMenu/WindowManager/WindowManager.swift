@@ -28,7 +28,7 @@ class WindowManager {
     }
     
     @objc func windowActionTriggered(notification: NSNotification) {
-        guard var parameters = notification.object as? ExecutionParameters else { return }
+        guard let parameters = notification.object as? ExecutionParameters else { return }
         
         if MultiWindowManager.execute(parameters: parameters) {
             return
