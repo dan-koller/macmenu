@@ -1,11 +1,10 @@
 //
-//  TodoManager.swift
+//  ReverseAllManager.swift
 //  MacMenu
 //
 //  Created by Daniel Koller on 31.08.23.
 //
 import Cocoa
-//import MASShortcut
 
 class ReverseAllManager {
 
@@ -21,7 +20,6 @@ class ReverseAllManager {
 
         for w in windows {
             let wScreen = sd.detectScreens(using: w)?.currentScreen
-            //if Defaults.todo.userEnabled && TodoManager.isTodoWindow(w) { continue }
             if wScreen == currentScreen {
                 reverseWindowPosition(w, screenFrame: screenFrame)
             }

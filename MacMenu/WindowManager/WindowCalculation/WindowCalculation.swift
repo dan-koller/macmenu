@@ -52,11 +52,10 @@ struct WindowCalculationParameters {
     let usableScreens: UsableScreens
     let action: WindowAction
     let lastAction: RectangleAction?
-    let ignoreTodo: Bool
     
     func asRectParams(visibleFrame: CGRect? = nil, differentAction: WindowAction? = nil) -> RectCalculationParameters {
         RectCalculationParameters(window: window,
-                                  visibleFrameOfScreen: visibleFrame ?? usableScreens.currentScreen.adjustedVisibleFrame(ignoreTodo),
+                                  visibleFrameOfScreen: visibleFrame ?? usableScreens.currentScreen.adjustedVisibleFrame(true),
                                   action: differentAction ?? action,
                                   lastAction: lastAction)
     }
@@ -65,8 +64,7 @@ struct WindowCalculationParameters {
         .init(window: window,
               usableScreens: usableScreens,
               action: differentAction,
-              lastAction: lastAction,
-              ignoreTodo: ignoreTodo)
+              lastAction: lastAction)
     }
 }
 

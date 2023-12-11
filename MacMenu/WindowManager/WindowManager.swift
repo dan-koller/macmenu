@@ -115,13 +115,10 @@ class WindowManager {
             }
         }
         
-        // TODO: try to remove this
-        let ignoreTodo = true
-        
         if frontmostWindowElement.isSheet == true
             || currentWindowRect.isNull
             || usableScreens.frameOfCurrentScreen.isNull
-            || usableScreens.currentScreen.adjustedVisibleFrame(ignoreTodo).isNull {
+            || usableScreens.currentScreen.adjustedVisibleFrame(true).isNull {
             NSSound.beep()
             return
         }
@@ -131,7 +128,7 @@ class WindowManager {
         
         let windowCalculation = WindowCalculationFactory.calculationsByAction[action]
         
-        let calculationParams = WindowCalculationParameters(window: currentWindow, usableScreens: usableScreens, action: action, lastAction: lastRectangleAction, ignoreTodo: ignoreTodo)
+        let calculationParams = WindowCalculationParameters(window: currentWindow, usableScreens: usableScreens, action: action, lastAction: lastRectangleAction)
         guard var calcResult = windowCalculation?.calculate(calculationParams) else {
             NSSound.beep()
             return
@@ -154,7 +151,7 @@ class WindowManager {
         
         let newRect = calcResult.rect.screenFlipped
         
-        let visibleFrameOfDestinationScreen = calcResult.resultingScreenFrame ?? calcResult.screen.adjustedVisibleFrame(ignoreTodo)
+        let visibleFrameOfDestinationScreen = calcResult.resultingScreenFrame ?? calcResult.screen.adjustedVisibleFrame(true)
 
         let useFixedSizeMover = (!frontmostWindowElement.isResizable() && action.resizes) || frontmostWindowElement.isSystemDialog == true
         let windowMoverChain = useFixedSizeMover

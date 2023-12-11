@@ -23,7 +23,7 @@ class NextPrevDisplayCalculation: WindowCalculation {
         }
 
         if let screen = screen {
-            let rectParams = params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo))
+            let rectParams = params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(true))
             
             if Constants.attemptMatchOnNextPrevDisplay.userEnabled {
                 if let lastAction = params.lastAction,

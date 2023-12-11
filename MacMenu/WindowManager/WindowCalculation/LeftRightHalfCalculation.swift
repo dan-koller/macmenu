@@ -48,13 +48,13 @@ class LeftRightHalfCalculation: WindowCalculation, RepeatedExecutionsCalculation
     }
 
     func calculateLeftAcrossDisplays(_ params: WindowCalculationParameters, screen: NSScreen) -> WindowCalculationResult? {
-        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .leftHalf))
+        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(true), differentAction: .leftHalf))
         return WindowCalculationResult(rect: oneHalfRect.rect, screen: screen, resultingAction: .leftHalf)
     }
     
     
     func calculateRightAcrossDisplays(_ params: WindowCalculationParameters, screen: NSScreen) -> WindowCalculationResult? {
-        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(params.ignoreTodo), differentAction: .rightHalf))
+        let oneHalfRect = calculateFullRect(params.asRectParams(visibleFrame: screen.adjustedVisibleFrame(true), differentAction: .rightHalf))
         return WindowCalculationResult(rect: oneHalfRect.rect, screen: screen, resultingAction: .rightHalf)
     }
 

@@ -13,7 +13,7 @@ class CenterCalculation: WindowCalculation {
 
         var screenFrame: CGRect?
         if !Constants.alwaysAccountForStage.userEnabled {
-            screenFrame = params.usableScreens.currentScreen.adjustedVisibleFrame(params.ignoreTodo, true)
+            screenFrame = params.usableScreens.currentScreen.adjustedVisibleFrame(true)
         }
                 
         let rectResult = calculateRect(params.asRectParams(visibleFrame: screenFrame))

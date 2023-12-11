@@ -356,8 +356,7 @@ class SnappingManager {
     func getBoxRect(hotSpot: SnapArea, currentWindow: Window) -> CGRect? {
         if let calculation = WindowCalculationFactory.calculationsByAction[hotSpot.action] {
             
-            let ignoreTodo = true
-            let rectCalcParams = RectCalculationParameters(window: currentWindow, visibleFrameOfScreen: hotSpot.screen.adjustedVisibleFrame(ignoreTodo), action: hotSpot.action, lastAction: nil)
+            let rectCalcParams = RectCalculationParameters(window: currentWindow, visibleFrameOfScreen: hotSpot.screen.adjustedVisibleFrame(true), action: hotSpot.action, lastAction: nil)
             let rectResult = calculation.calculateRect(rectCalcParams)
             
             let gapsApplicable = hotSpot.action.gapsApplicable
@@ -379,17 +378,6 @@ class SnappingManager {
         for screen in NSScreen.screens {
             guard let directional = directionalLocationOfCursor(loc: loc, screen: screen)
             else { continue }
-            
-            /*
-             if let windowId = windowId, Defaults.todo.userEnabled && Defaults.todoMode.enabled && TodoManager.isTodoWindow(windowId) {
-             if Defaults.todoSidebarSide.value == .left && directional == .l {
-             return SnapArea(screen: screen, directional: directional, action: .leftTodo)
-             }
-             if Defaults.todoSidebarSide.value == .right && directional == .r {
-             return SnapArea(screen: screen, directional: directional, action: .rightTodo)
-             }
-             }
-             */
             
             let config = screen.frame.isLandscape
             ? SnapAreaModel.instance.landscape[directional]

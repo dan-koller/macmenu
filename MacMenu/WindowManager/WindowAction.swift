@@ -80,9 +80,7 @@ enum WindowAction: Int, Codable {
     bottomRightEighth = 65,
     tileAll = 66,
     cascadeAll = 67,
-    leftTodo = 68,
-    rightTodo = 69,
-    cascadeActiveApp = 70
+    cascadeActiveApp = 68
 
     // Order matters here - it's used in the menu
     static let active = [leftHalf, rightHalf, centerHalf, topHalf, bottomHalf,
@@ -101,7 +99,6 @@ enum WindowAction: Int, Codable {
                          topLeftEighth, topCenterLeftEighth, topCenterRightEighth, topRightEighth,
                          bottomLeftEighth, bottomCenterLeftEighth, bottomCenterRightEighth, bottomRightEighth,
                          tileAll, cascadeAll,
-                         leftTodo, rightTodo,
                          cascadeActiveApp
     ]
 
@@ -201,8 +198,6 @@ enum WindowAction: Int, Codable {
         case .bottomRightEighth: return "bottomRightEighth"
         case .tileAll: return "tileAll"
         case .cascadeAll: return "cascadeAll"
-        case .leftTodo: return "leftTodo"
-        case .rightTodo: return "rightTodo"
         case .cascadeActiveApp: return "cascadeActiveApp"
         }
     }
@@ -321,8 +316,6 @@ enum WindowAction: Int, Codable {
         case .specified, .reverseAll: return NSImage()
         case .tileAll: return NSImage()
         case .cascadeAll: return NSImage()
-        case .leftTodo: return NSImage()
-        case .rightTodo: return NSImage()
         case .cascadeActiveApp: return NSImage()
         }
     }
@@ -353,8 +346,7 @@ enum WindowAction: Int, Codable {
             .topLeftNinth, .topCenterNinth, .topRightNinth, .middleLeftNinth, .middleCenterNinth, .middleRightNinth, .bottomLeftNinth, .bottomCenterNinth, .bottomRightNinth,
             .topLeftThird, .topRightThird, .bottomLeftThird, .bottomRightThird,
             .topLeftEighth, .topCenterLeftEighth, .topCenterRightEighth, .topRightEighth,
-            .bottomLeftEighth, .bottomCenterLeftEighth, .bottomCenterRightEighth, .bottomRightEighth,
-            .leftTodo, .rightTodo:
+            .bottomLeftEighth, .bottomCenterLeftEighth, .bottomCenterRightEighth, .bottomRightEighth:
             return .both
         case .moveUp, .moveDown:
             return Constants.resizeOnDirectionalMove.enabled ? .vertical : .none;
@@ -465,10 +457,7 @@ enum SubWindowAction {
     bottomCenterRightEighth,
     bottomRightEighth,
         
-    maximize,
-    
-    leftTodo,
-    rightTodo
+    maximize
 
     var gapSharedEdge: Edge {
         switch self {
@@ -538,8 +527,6 @@ enum SubWindowAction {
         case .bottomCenterRightEighth: return  [.right, .left, .top]
         case .bottomRightEighth: return  [.left, .top]
         case .maximize: return .none
-        case .leftTodo: return .right
-        case .rightTodo: return .left
         }
     }
 }

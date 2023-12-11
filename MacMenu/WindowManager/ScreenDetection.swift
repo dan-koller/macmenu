@@ -125,7 +125,7 @@ struct AdjacentScreens {
 
 extension NSScreen {
 
-    func adjustedVisibleFrame(_ ignoreTodo: Bool = false, _ ignoreStage: Bool = false) -> CGRect {
+    func adjustedVisibleFrame(_ ignoreStage: Bool = false) -> CGRect {
         var newFrame = visibleFrame
         
         if !ignoreStage && Constants.stageSize.value > 0 {
@@ -140,15 +140,6 @@ extension NSScreen {
                 newFrame.size.width -= stageSize
             }
         }
-        
-        /*
-        if !ignoreTodo, Defaults.todo.userEnabled, Defaults.todoMode.enabled, TodoManager.todoScreen == self, TodoManager.hasTodoWindow() {
-            if Defaults.todoSidebarSide.value == .left {
-                newFrame.origin.x += Defaults.todoSidebarWidth.cgFloat
-            }
-            newFrame.size.width -= Defaults.todoSidebarWidth.cgFloat
-        }
-         */
 
         if Constants.screenEdgeGapsOnMainScreenOnly.enabled, self != NSScreen.screens.first {
             return newFrame

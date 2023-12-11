@@ -6,11 +6,9 @@
 //
 
 import Cocoa
-//import MASShortcut
 
 class MultiWindowManager {
     static func execute(parameters: ExecutionParameters) -> Bool {
-        // TODO: Protocol and factory for all multi-window positioning algorithms
         switch parameters.action {
         case .reverseAll:
             ReverseAllManager.reverseAll(windowElement: parameters.windowElement)
@@ -51,7 +49,6 @@ class MultiWindowManager {
 
         var actualWindows = [AccessibilityElement]()
         for w in windows {
-            //if Defaults.todo.userEnabled, TodoManager.isTodoWindow(w) { continue }
             let screen = screenDetection.detectScreens(using: w)?.currentScreen
             if screen == currentScreen
                 && w.isWindow == true
@@ -88,8 +85,6 @@ class MultiWindowManager {
 
     private static func tileWindow(_ w: AccessibilityElement, screenFrame: CGRect, size: CGSize, column: Int, row: Int) {
         var rect = w.frame
-
-        // TODO: save previous position in history
 
         rect.origin.x = screenFrame.origin.x + size.width * CGFloat(column)
         rect.origin.y = screenFrame.origin.y + size.height * CGFloat(row)
@@ -148,8 +143,6 @@ class MultiWindowManager {
 
     private static func cascadeWindow(_ w: AccessibilityElement, screenFrame: CGRect, delta: CGFloat, index: Int, size: CGSize? = nil) {
         var rect = w.frame
-
-        // TODO: save previous position in history
 
         rect.origin.x = screenFrame.origin.x + delta * CGFloat(index)
         rect.origin.y = screenFrame.origin.y + delta * CGFloat(index)
