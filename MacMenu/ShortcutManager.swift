@@ -27,7 +27,6 @@ class ShortcutManager {
     
     deinit {
         // unsubscribe
-//        NotificationCenter.default.removeObserver(self)
         unsubscribe()
     }
     
@@ -42,11 +41,6 @@ class ShortcutManager {
             MASShortcutBinder.shared()?.breakBinding(withDefaultsKey: action.name)
         }
     }
-    
-//    public func getKeyEquivalent(action: WindowAction) -> (String?, NSEvent.ModifierFlags)? {
-//        guard let masShortcut = MASShortcutBinder.shared()?.value(forKey: action.name) as? MASShortcut else { return nil }
-//        return (masShortcut.keyCodeStringForKeyEquivalent, masShortcut.modifierFlags)
-//    }
     
     private func registerDefaults() {
         let defaultShortcuts = WindowAction.active.reduce(into: [String: MASShortcut]()) { dict, windowAction in

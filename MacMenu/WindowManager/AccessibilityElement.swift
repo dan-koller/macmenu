@@ -358,7 +358,7 @@ class StageWindowAccessibilityElement: AccessibilityElement {
 }
 
 enum EnhancedUI: Int {
-    case disableEnable = 1 /// The default behavior - disable Enhanced UI on every window move/resize
-    case disableOnly = 2 /// Don't re-enable enhanced UI after it gets disabled
-    case frontmostDisable = 3 /// Disable enhanced UI every time the frontmost app gets changed
+    case disableEnable = 1 // The default behavior - disable Enhanced UI on every window move/resize
+    case disableOnly = 2 // Don't re-enable enhanced UI after it gets disabled
+    case frontmostDisable = 3 // Disable enhanced UI every time the frontmost app gets changed
 }
