@@ -183,6 +183,7 @@
 		654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingManager.swift; sourceTree = "<group>"; };
 		6583AA892AE8F60F0076E070 /* EventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTap.swift; sourceTree = "<group>"; };
 		6583AA8B2AE8F6860076E070 /* CleaningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleaningManager.swift; sourceTree = "<group>"; };
+		65D151CA2B44488700AD1A61 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +228,7 @@
 		654B2AD42AAB02FD0084CFBA = {
 			isa = PBXGroup;
 			children = (
+				65D151CA2B44488700AD1A61 /* README.md */,
 				654B2ADF2AAB02FE0084CFBA /* MacMenu */,
 				654B2AF12AAB03110084CFBA /* MacMenuTests */,
 				654B2AFB2AAB03110084CFBA /* MacMenuUITests */,
