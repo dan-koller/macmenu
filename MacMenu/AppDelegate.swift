@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var snappingManager: SnappingManager!
     private var shortcutManager: ShortcutManager!
     private var cleaningManager: CleaningManager!
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let systemInfoView = SystemInfoView()
         let keyboardCleaningView = CleaningModeView()
@@ -53,10 +53,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // Request permissions and start the wm
-        requestAccessibilityPermissions()
+        requestAccessibilityPermissionsWindow()
         initializeWindowManager()
-        
-        // TODO: Show a small welcome window that displays the shortcuts
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -68,18 +66,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-
-    // Disable xcode sandbox when developing to get an accessibilty prompt
-    func requestAccessibilityPermissions() {
-        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
-        
-        let trusted = AXIsProcessTrustedWithOptions(options)
-        if trusted {
-            print("Accessibility permissions granted.")
-        } else {
-            print("Accessibility permissions denied.")
+    
+    private func requestAccessibilityPermissionsWindow() {
+        let alert = NSAlert()
+        alert.messageText = "Accessibility permissions required"
+        alert.informativeText = "MacMenu requires accessibility permissions to work. Please grant them in the system preferences."
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Open System Preferences")
+        alert.addButton(withTitle: "Cancel")
+        let response = alert.runModal()
+        if response == .alertFirstButtonReturn {
+            let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+            NSWorkspace.shared.open(url)
         }
     }
+    
+    // Disable xcode sandbox when developing to get an accessibilty prompt
+    // func requestAccessibilityPermissions() {
+    //     let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
+        
+    //     let trusted = AXIsProcessTrustedWithOptions(options)
+    //     if trusted {
+    //         print("Accessibility permissions granted.")
+    //     } else {
+    //         print("Accessibility permissions denied.")
+    //     }
+    // }
     
     func initializeWindowManager() {
         self.windowManager = WindowManager()
@@ -87,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.shortcutManager = ShortcutManager(windowManager: windowManager)
         self.cleaningManager = CleaningManager()
     }
-
+    
     func toggleWindowManager(_ isListening: Bool) {
         snappingManager.toggleListening(isListening)
         shortcutManager.toggleListening(isListening)
@@ -96,14 +108,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func toggleCleaningMode(_ isListening: Bool) {
         cleaningManager.toggleCleaning(isListening)
     }
-
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
     }
-
+    
 }
 
