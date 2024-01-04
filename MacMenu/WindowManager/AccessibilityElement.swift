@@ -315,11 +315,11 @@ extension AccessibilityElement {
             }
             if let windowElements = AccessibilityElement(info.pid).windowElements {
                 if let windowElement = (windowElements.first { $0.windowId == info.id }) {
-                    let appName = NSRunningApplication(processIdentifier: info.pid)?.localizedName ?? ""
+                    _ = NSRunningApplication(processIdentifier: info.pid)?.localizedName ?? ""
                     return windowElement
                 }
                 if let windowElement = (windowElements.first { $0.frame == info.frame }) {
-                    let appName = NSRunningApplication(processIdentifier: info.pid)?.localizedName ?? ""
+                    _ = NSRunningApplication(processIdentifier: info.pid)?.localizedName ?? ""
                     return windowElement
                 }
             }
