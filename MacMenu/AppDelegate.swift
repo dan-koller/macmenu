@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
@@ -55,6 +56,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Request permissions and start the wm
         requestAccessibilityPermissionsWindow()
         initializeWindowManager()
+        
+        // Ask if the user wants to launch the app on startup
+        askForLaunchOnStartup()
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -81,17 +85,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    // Disable xcode sandbox when developing to get an accessibilty prompt
-    // func requestAccessibilityPermissions() {
-    //     let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
+    private func askForLaunchOnStartup() {
+        let alert = NSAlert()
+        alert.messageText = "Launch on startup?"
+        alert.informativeText = "Do you want MacMenu to launch on startup?"
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Yes")
+        alert.addButton(withTitle: "No")
         
-    //     let trusted = AXIsProcessTrustedWithOptions(options)
-    //     if trusted {
-    //         print("Accessibility permissions granted.")
-    //     } else {
-    //         print("Accessibility permissions denied.")
-    //     }
-    // }
+        let response = alert.runModal()
+        
+        if response == .alertFirstButtonReturn {
+            if !LaunchAtLogin.isEnabled {
+                LaunchAtLogin.isEnabled = true
+            }
+        }
+    }
     
     func initializeWindowManager() {
         self.windowManager = WindowManager()
@@ -107,7 +116,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func toggleCleaningMode(_ isListening: Bool) {
         cleaningManager.toggleCleaning(isListening)
-    }
+    } 
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application

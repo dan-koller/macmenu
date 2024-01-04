@@ -80,6 +80,7 @@
 		654B2C0F2AAB04AA0084CFBA /* CompoundSnapArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB62AAB04AA0084CFBA /* CompoundSnapArea.swift */; };
 		654B2C102AAB04AA0084CFBA /* FourthsCompoundCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB72AAB04AA0084CFBA /* FourthsCompoundCalculation.swift */; };
 		654B2C112AAB04AA0084CFBA /* SnappingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B2BB82AAB04AA0084CFBA /* SnappingManager.swift */; };
+		657EE4AA2B46DABC00FE1702 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 657EE4A92B46DABC00FE1702 /* LaunchAtLogin */; };
 		6583AA8A2AE8F60F0076E070 /* EventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583AA892AE8F60F0076E070 /* EventTap.swift */; };
 		6583AA8C2AE8F6860076E070 /* CleaningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583AA8B2AE8F6860076E070 /* CleaningManager.swift */; };
 		65E770CB2ABF4DAD0037D593 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E770CA2ABF4DAD0037D593 /* ShortcutManager.swift */; };
@@ -192,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657EE4AA2B46DABC00FE1702 /* LaunchAtLogin in Frameworks */,
 				6533CD1F2AD402B1009263A7 /* SISwift in Frameworks */,
 				65E770CE2AC16D070037D593 /* MASShortcut in Frameworks */,
 			);
@@ -424,6 +426,7 @@
 			packageProductDependencies = (
 				65E770CD2AC16D070037D593 /* MASShortcut */,
 				6533CD1E2AD402B1009263A7 /* SISwift */,
+				657EE4A92B46DABC00FE1702 /* LaunchAtLogin */,
 			);
 			productName = MacMenu;
 			productReference = 654B2ADD2AAB02FE0084CFBA /* MacMenu.app */;
@@ -501,6 +504,7 @@
 			packageReferences = (
 				65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 				6533CD1D2AD402B1009263A7 /* XCRemoteSwiftPackageReference "SISwift" */,
+				657EE4A82B46DABC00FE1702 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 654B2ADE2AAB02FE0084CFBA /* Products */;
 			projectDirPath = "";
@@ -938,6 +942,14 @@
 				kind = branch;
 			};
 		};
+		657EE4A82B46DABC00FE1702 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		65E770CC2AC16D070037D593 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dan-koller/MASShortcut";
@@ -953,6 +965,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6533CD1D2AD402B1009263A7 /* XCRemoteSwiftPackageReference "SISwift" */;
 			productName = SISwift;
+		};
+		657EE4A92B46DABC00FE1702 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 657EE4A82B46DABC00FE1702 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
 		65E770CD2AC16D070037D593 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
