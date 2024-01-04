@@ -44,6 +44,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusButton.action = #selector(togglePopover(_:))
         }
         
+        // Register an observer for mouse clicks outside the popover
+        NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] _ in
+            guard let self = self else { return }
+            if self.popover.isShown {
+                self.togglePopover(nil)
+            }
+        }
+        
         // Request permissions and start the wm
         requestAccessibilityPermissions()
         initializeWindowManager()
@@ -63,7 +71,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // Disable xcode sandbox when developing to get an accessibilty prompt
     func requestAccessibilityPermissions() {
-        // TODO: Wait for the user to grant permission
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
         
         let trusted = AXIsProcessTrustedWithOptions(options)
