@@ -10,7 +10,7 @@ MacMenu is a multi-purpose menu bar application for macOS. It features a window 
 
 ## System Requirements
 
-MacMenu requires macOS 10.15 Catalina or later. Older versions of macOS are not tested and may not work.
+MacMenu requires macOS 13.3 or later. Older versions of macOS are not tested and may not work.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
@@ -18,7 +18,7 @@ MacMenu requires macOS 10.15 Catalina or later. Older versions of macOS are not 
 
 Download the latest version from the [releases page](https://github.com/dan-koller/macmenu/releases). On first launch, macOS will warn you that the application is from an unidentified developer. To open it, right-click the application and select "Open". You will only have to do this once.
 
-Also, you need to grant accessibility permissions to MacMenu. To do this, go to System Preferences > Security & Privacy > Privacy > Accessibility and check the box next to MacMenu.
+Also, you need to grant accessibility permissions to MacMenu. To do this, go to System Preferences > Security & Privacy > Privacy > Accessibility and check the box next to MacMenu. You can also add MacMenu to the list of login items to automatically launch it on login.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
