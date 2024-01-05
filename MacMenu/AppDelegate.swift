@@ -53,12 +53,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        // Request permissions and start the wm
-        requestAccessibilityPermissionsWindow()
+        // Request permissions and launch on startup
+        if !isAccessibilityTrusted() {
+            requestAccessibilityPermissionsWindow()
+        }
+
+        if !LaunchAtLogin.isEnabled {
+            askForLaunchOnStartup()
+        }
+
+        // Initialize window manager
         initializeWindowManager()
-        
-        // Ask if the user wants to launch the app on startup
-        askForLaunchOnStartup()
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
@@ -69,6 +74,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             }
         }
+    }
+
+    private func isAccessibilityTrusted() -> Bool {
+        // Check if the app is trusted for accessibility
+        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: false]
+        return AXIsProcessTrustedWithOptions(options)
     }
     
     private func requestAccessibilityPermissionsWindow() {
