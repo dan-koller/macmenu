@@ -10,7 +10,7 @@ MacMenu is a multi-purpose menu bar application for macOS. It features a window 
 
 ## System Requirements
 
-MacMenu requires macOS 13.3 or later. Older versions of macOS are not tested and may not work.
+MacMenu requires macOS 11.0 or later. Older versions of macOS are not tested and may not work.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
